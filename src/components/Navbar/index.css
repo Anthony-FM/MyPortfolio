@@ -1,0 +1,114 @@
+.navbar{
+    display: flex;
+    width: 100%;
+    padding: 10px 8% 10px 8%;
+    position: fixed;
+    animation: downName 2500ms ease both;
+    animation-delay: 15s;
+    z-index: 99999;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo{
+    width: 50px;
+}
+
+.navbar-ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 450px;
+}
+
+.navbar-li{    
+    list-style: none;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 5px;
+    
+}
+
+.navbar-li::after{
+    content: '';
+    padding: 5px;
+    background-color: #1152B9;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: -5px;
+    top: -5px;
+    z-index: -1;
+    transform-origin: left bottom;
+    transform: translateX(-100%);
+    transition: all 600ms ease;
+}
+
+.navbar-li:hover .navbar-link{
+    color: white;
+}
+.navbar-li:hover::after{
+    transform: translateX(0);
+}
+.navbar-link{    
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: all 100ms ease;
+}
+.navbar-mobile{
+    display: none;
+}
+
+@media screen and (max-width: 780px) {
+    .navbar-ul{
+        display: none;
+    }
+    .navbar-mobile{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        right: 0;
+        top:10px;
+        padding: 0 8% 0;
+        width: 70%;
+        align-items: flex-end;
+        transition: all 1s ease-in-out;
+        
+    }
+    .navbar-ul-mobile{
+        
+        flex-direction: column;
+        justify-content: flex-start;
+        transition: all 200ms ease;
+        transform-origin: right ;
+        transform: scale(0);
+        transition: all 200ms ease;
+        transition:  all 1s ease-in-out ;
+    }
+    .navbar-li-mobile{
+        list-style: none;
+    }
+    .navbar-li-mobile link{
+        list-style: none;
+    }
+    .navbar-link{
+        font-size: 2em;
+        margin: 10px 0;
+    }
+    .pictos-container{
+        display: flex;
+        justify-content: space-between;
+    }
+    .navbar-darkmode{
+        margin: 50px 0 10px;
+    }
+    
+}
+.move-right{
+    transform: scale(1);
+}

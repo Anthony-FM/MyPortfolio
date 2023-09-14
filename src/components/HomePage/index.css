@@ -1,0 +1,347 @@
+.home-container{
+    width: 100vw;
+    height: 100vh;
+    padding: 0 8% 0 8%;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media screen and (max-width: 780px) {
+    .home-container{
+        width: 100%;
+        height: inherit;
+        padding: 30px 8% 0 8%;
+        display: flex;
+        flex-direction:column;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.home-container .container:nth-child(2){
+    animation-delay: 3000ms;
+}
+@media screen and (max-width: 780px) {
+    .home-container .container:nth-child(2){
+        display: none;
+    }
+    
+}
+
+
+
+.container{
+    width: 45%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: containerDown 2000ms ease-in-out both;
+}
+
+@media screen and (max-width: 780px){
+    .container{
+        width: 100%;
+        height: 100vh;
+        align-items: center;
+    }
+}
+
+@keyframes containerDown{
+    0%{
+        transform: translateY(-10vh);
+        opacity: 0;
+
+    }
+    70%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+.home-first{
+    color: #1152B9;
+    font-size: 1.1em;
+}
+
+@media screen and (max-width:780px) {
+    .home-first{
+        color: #1152B9;
+        font-size: 0.9em;
+    }
+    
+}
+
+.home-img-hand{
+    width: 25px;
+    animation: handshake 1000ms infinite ease-in-out;
+    transform-origin: bottom;
+}
+
+@media screen and (max-width:780px) {
+    .home-img-hand{
+        width: 15px;
+    }
+    
+}
+
+@keyframes handshake{
+    0%{
+        transform: rotate(5deg)
+    }
+    25%{
+        transform: rotate(-5deg);
+    }
+    100%{
+        transform: rotate(5deg);
+    }
+}
+.home-name{
+    font-size: 2.6em;
+    font-weight: 900;
+    margin: 0 0 10px 10px;
+    animation: downName 1000ms ease both;
+    animation-delay: 3000ms;
+    font-family: 'Permanent Marker', cursive;
+}
+
+@media screen and (max-width:780px) {
+    .home-name{
+        font-size: 1.4em;
+        margin-top: 15px;
+    }
+    
+}
+
+@keyframes downName{
+
+    0%{
+        opacity: 0;
+        transform: translateY(-20px);
+        
+    }
+    100%{
+        opacity: 1;
+        transform: translateY();
+    }
+}
+
+.home-works{
+    font-size: 1.8em;
+    color: #1152B9;
+    font-style: italic;
+    margin-bottom: 15px;
+    margin-left: 20px;
+    animation: rightWorks 3000ms ease both;
+    animation-delay: 5s;
+}
+
+@media screen and (max-width:780px) {
+    .home-works{
+        font-size: 1.6em;
+    }
+    
+}
+
+@keyframes rightWorks{
+    0%{
+        opacity: 0;
+        transform: translateX(50px);
+
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.citation{
+    margin: 10px;
+    text-align: right;
+    width: 50%;
+}
+
+.barre{
+    display: inline-block;
+    width: 1px;
+    height: 12px;
+    animation: blink 500ms ease-in-out infinite;
+    transform-origin: bottom;
+}
+
+@media screen and (max-width:780px) {
+    .barre{
+        height: 18px;
+    }
+    
+}
+
+@keyframes blink {
+   from{
+    transform: scaleX(0);
+    
+   }
+   to{
+    transform: scaleX(1);
+    transform: rotate(15deg);
+   }
+}
+
+
+.home-paragraphe{
+    font-size: 1.2em;
+    text-align: left;
+    margin-bottom: 50px;
+    animation: downName 2000ms ease both;
+    animation-delay: 7000ms;
+    
+}
+
+@media screen and (max-width: 780px){
+    .home-paragraphe{
+        font-size: 0.95em;
+        text-align: justify;
+        margin-bottom: 20px;
+    }
+
+}
+
+.home-left-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.imgContainer{
+    width: 85%;
+    height: 100%;   
+    display: flex;
+    animation: move 20000ms ease-in-out infinite;
+    transition: all 200ms ease-in-out;
+    clip-path: circle(20% at 25% 25%);
+}
+
+@media screen and (max-width:780px) {
+    .imgContainer{         
+        display: none;
+    }    
+}
+
+
+.imgContainerBis{
+    display: none;
+}
+@media screen and (max-width:780px) {
+    .imgContainerBis{         
+        width: 100%;
+        height: 222px;
+        display: flex;
+        animation: moveMobile 20000ms ease-in-out infinite;
+        transition: all 200ms ease-in-out;
+        clip-path: circle(40% at 25% 25%);
+        justify-content: center;
+        position: relative;
+    }  
+    .imgContainerBis img{
+        width: 70%;
+
+    } 
+    .imgBis-container{
+        animation: containerDown 2000ms ease-in-out both;
+        animation-delay: 3000ms;
+        width: 100%;
+    } 
+    @keyframes moveMobile{
+        0%{
+            clip-path: circle(15% at 35% 25%);
+        }
+        20%{
+            clip-path: circle(15% at 35% 30%);
+        }
+        40%{
+            clip-path: circle(15% at 40% 30%);
+        }
+        60%{
+            clip-path: circle(35% at 55% 50%);
+        }
+        80%{
+            clip-path: circle(20% at 65% 65%);
+        }
+        100%{
+            clip-path: circle(15% at 35% 25%);
+        }
+    }
+    @keyframes bigMobile {
+        from{
+            clip-path: circle(20% at 25% 25%)
+        }
+        to{
+            clip-path: circle(30% at 40% 40%);
+        }
+    }
+    .imgContainer:hover, .imgContainerBis:hover{
+    
+        animation: bigMobile 500ms ease-in-out both;
+        transition: all 500s ease-in;
+    }
+    .citation{
+        display: flex;
+        animation: downName 1000ms ease both;
+        animation-delay: 15s;
+    }
+}
+
+@keyframes move{
+    0%{
+        clip-path: circle(15% at 35% 25%);
+    }
+    20%{
+        clip-path: circle(15% at 30% 25%);
+    }
+    40%{
+        clip-path: circle(20% at 25% 30%);
+    }
+    60%{
+        clip-path: circle(40% at 50% 50%);
+    }
+    80%{
+        clip-path: circle(30% at 65% 65%);
+    }
+    100%{
+        clip-path: circle(15% at 35% 25%);
+    }
+}
+
+.imgContainer:hover, .imgContainerBis:hover{
+    
+    animation: big 500ms ease-in-out both;
+    transition: all 500s ease-in;
+}
+
+@keyframes big {
+    from{
+        clip-path: circle(20% at 25% 25%)
+    }
+    to{
+        clip-path: circle(40% at 50% 50%);
+    }
+}
+
+.home-img-me{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   
+}
+
+.pictos-container a:nth-child(2){
+    animation-delay: 200ms;
+}
+.pictos-container a:nth-child(1){
+    filter: brightness(2);
+}

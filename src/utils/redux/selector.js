@@ -1,0 +1,1 @@
+export const selectMyslice = (state) => state.myPortefolioFeatures

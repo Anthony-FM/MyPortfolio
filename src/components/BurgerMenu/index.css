@@ -1,0 +1,39 @@
+.burgerMenu-container{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 50px;
+}
+
+.burger-top, .burger-bottom{
+    width: 30px;
+    height: 5px;
+    border-radius: 3px;
+    background-color: #1152B9;
+    transition: all 500ms ease-in-out
+}
+.burger-top{
+    transform-origin: 0 0;
+}
+.burger-bottom{
+    transform-origin: 0 100% ;
+}
+.burger-middle{
+    width: 15px;
+    height: 3px;
+    border-radius: 3px;
+    background-color: #1152B9;
+    transition: all 700ms ease-in-out;
+}
+
+.bun-move-down{
+    transform: rotate(42deg);
+}
+.bun-move-up{
+    transform: rotate(-42deg);
+}
+
