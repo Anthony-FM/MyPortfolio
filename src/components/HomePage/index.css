@@ -1,5 +1,5 @@
 .home-container{
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     padding: 0 8% 0 8%;
     display: flex;
@@ -7,31 +7,13 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-}
-
-@media screen and (max-width: 780px) {
-    .home-container{
-        width: 100%;
-        height: inherit;
-        padding: 30px 8% 0 8%;
-        display: flex;
-        flex-direction:column;
-        justify-content: space-between;
-        align-items: center;
-    }
+    transition: all 1s ease-in-out;
+    transform-origin: top;
 }
 
 .home-container .container:nth-child(2){
     animation-delay: 3000ms;
 }
-@media screen and (max-width: 780px) {
-    .home-container .container:nth-child(2){
-        display: none;
-    }
-    
-}
-
-
 
 .container{
     width: 45%;
@@ -41,99 +23,35 @@
     justify-content: center;
     animation: containerDown 2000ms ease-in-out both;
 }
-
-@media screen and (max-width: 780px){
-    .container{
-        width: 100%;
-        height: 100vh;
-        align-items: center;
-    }
-}
-
-@keyframes containerDown{
-    0%{
-        transform: translateY(-10vh);
-        opacity: 0;
-
-    }
-    70%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
-}
-
-
 .home-first{
     color: #1152B9;
     font-size: 1.1em;
 }
 
-@media screen and (max-width:780px) {
+@media screen and (max-width: 930px) {
     .home-first{
-        color: #1152B9;
-        font-size: 0.9em;
+        font-size: 1em;
     }
     
 }
 
 .home-img-hand{
-    width: 25px;
+    width: 40px;
     animation: handshake 1000ms infinite ease-in-out;
     transform-origin: bottom;
 }
 
-@media screen and (max-width:780px) {
-    .home-img-hand{
-        width: 15px;
-    }
-    
-}
-
-@keyframes handshake{
-    0%{
-        transform: rotate(5deg)
-    }
-    25%{
-        transform: rotate(-5deg);
-    }
-    100%{
-        transform: rotate(5deg);
-    }
-}
 .home-name{
     font-size: 2.6em;
     font-weight: 900;
-    margin: 0 0 10px 10px;
-    animation: downName 1000ms ease both;
+    margin: 20px 0 5px 10px;
+    animation: downName 2000ms ease both;
     animation-delay: 3000ms;
     font-family: 'Permanent Marker', cursive;
 }
 
-@media screen and (max-width:780px) {
-    .home-name{
-        font-size: 1.4em;
-        margin-top: 15px;
-    }
-    
-}
-
-@keyframes downName{
-
-    0%{
-        opacity: 0;
-        transform: translateY(-20px);
-        
-    }
-    100%{
-        opacity: 1;
-        transform: translateY();
-    }
-}
-
 .home-works{
-    font-size: 1.8em;
+    font-size: 1.6em;
     color: #1152B9;
     font-style: italic;
     margin-bottom: 15px;
@@ -142,29 +60,10 @@
     animation-delay: 5s;
 }
 
-@media screen and (max-width:780px) {
-    .home-works{
-        font-size: 1.6em;
-    }
-    
-}
-
-@keyframes rightWorks{
-    0%{
-        opacity: 0;
-        transform: translateX(50px);
-
-    }
-    100%{
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
 .citation{
     margin: 10px;
-    text-align: right;
     width: 50%;
+    animation: opacity 2000ms 8s ease-in-out both;
 }
 
 .barre{
@@ -175,25 +74,6 @@
     transform-origin: bottom;
 }
 
-@media screen and (max-width:780px) {
-    .barre{
-        height: 18px;
-    }
-    
-}
-
-@keyframes blink {
-   from{
-    transform: scaleX(0);
-    
-   }
-   to{
-    transform: scaleX(1);
-    transform: rotate(15deg);
-   }
-}
-
-
 .home-paragraphe{
     font-size: 1.2em;
     text-align: left;
@@ -201,15 +81,6 @@
     animation: downName 2000ms ease both;
     animation-delay: 7000ms;
     
-}
-
-@media screen and (max-width: 780px){
-    .home-paragraphe{
-        font-size: 0.95em;
-        text-align: justify;
-        margin-bottom: 20px;
-    }
-
 }
 
 .home-left-container{
@@ -226,21 +97,103 @@
     transition: all 200ms ease-in-out;
     clip-path: circle(20% at 25% 25%);
 }
-
-@media screen and (max-width:780px) {
-    .imgContainer{         
-        display: none;
-    }    
-}
-
-
 .imgContainerBis{
     display: none;
 }
+.imgContainer:hover, .imgContainerBis:hover{
+    
+    animation: big 500ms ease-in-out both;
+    transition: all 500s ease-in;
+}
+
+.home-img-me{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   
+}
+
+.pictos-container a:nth-child(2){
+    animation-delay: 200ms;
+}
+.pictos-container a:nth-child(1){
+    filter: brightness(2);
+}
+
+
+/********** Média Quéries 1200px  **********/
+
+@media screen and (max-width:1200px) {
+    .home-name{
+        font-size: 2em;
+    }  
+    .home-works{
+        font-size: 1.37em;
+        text-align: center;
+        margin-left: 0;
+    }  
+}
+
+/********** Média Quéries 930px  **********/
+
+@media screen and (max-width: 930px) {
+    .home-name{
+        font-size: 1.6em;
+    }
+}
+
+/********** Média Queries 780px **********/
+
 @media screen and (max-width:780px) {
+    .home-container{
+        width: 100%;
+        height: inherit;
+        padding: 30px 8% 0 8%;
+        display: flex;
+        flex-direction:column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .home-container .container:nth-child(2){
+        display: none;
+    }
+    .container{
+        width: 100%;
+        height: 100vh;
+        align-items: center;
+    }
+    .home-first{
+        color: #1152B9;
+        font-size: 0.9em;
+    }
+    .home-img-hand{
+        width: 15px;
+    }
+
+    .home-name{
+        font-size: 1.4em;
+        margin-top: 15px;
+    }
+
+    .home-works{
+        font-size: 1.1em;
+        text-align: center;
+        margin-left: 0;
+    }  
+    .barre{
+        height: 18px;
+    }
+    .home-paragraphe{
+        font-size: 0.85em;
+        text-align: justify;
+        margin-bottom: 20px;
+    }
+    .imgContainer{         
+        display: none;
+    }   
+
     .imgContainerBis{         
         width: 100%;
-        height: 222px;
+        height: 280px;
         display: flex;
         animation: moveMobile 20000ms ease-in-out infinite;
         transition: all 200ms ease-in-out;
@@ -248,10 +201,7 @@
         justify-content: center;
         position: relative;
     }  
-    .imgContainerBis img{
-        width: 70%;
-
-    } 
+    
     .imgBis-container{
         animation: containerDown 2000ms ease-in-out both;
         animation-delay: 3000ms;
@@ -282,7 +232,7 @@
             clip-path: circle(20% at 25% 25%)
         }
         to{
-            clip-path: circle(30% at 40% 40%);
+            clip-path: circle(35% at 40% 40%);
         }
     }
     .imgContainer:hover, .imgContainerBis:hover{
@@ -294,6 +244,17 @@
         display: flex;
         animation: downName 1000ms ease both;
         animation-delay: 15s;
+    }
+}
+
+/********** Keyframe **********/
+
+@keyframes big {
+    from{
+        clip-path: circle(20% at 25% 25%)
+    }
+    to{
+        clip-path: circle(40% at 50% 50%);
     }
 }
 
@@ -318,30 +279,86 @@
     }
 }
 
-.imgContainer:hover, .imgContainerBis:hover{
-    
-    animation: big 500ms ease-in-out both;
-    transition: all 500s ease-in;
-}
-
-@keyframes big {
+@keyframes blink {
     from{
-        clip-path: circle(20% at 25% 25%)
+     transform: scaleX(0);
+     
     }
     to{
-        clip-path: circle(40% at 50% 50%);
+     transform: scaleX(1);
+     transform: rotate(15deg);
+    }
+ }
+
+ 
+@keyframes opacity {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
     }
 }
 
-.home-img-me{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;   
+@keyframes rightWorks{
+    0%{
+        opacity: 0;
+        transform: translateX(50px);
+
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
-.pictos-container a:nth-child(2){
-    animation-delay: 200ms;
+@keyframes containerDown{
+    0%{
+        transform: translateY(-10vh);
+        opacity: 0;
+
+    }
+    70%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
-.pictos-container a:nth-child(1){
-    filter: brightness(2);
+
+
+@keyframes downName{
+
+    0%{
+        opacity: 0;
+        transform: translateY(-20px);
+        
+    }
+    100%{
+        opacity: 1;
+        transform: translateY();
+    }
+}
+@keyframes handshake{
+    0%{
+        transform: rotate(5deg)
+    }
+    25%{
+        transform: rotate(-5deg);
+    }
+    45%{
+        transform: rotate(5deg);
+    }
+    60%{
+        transform: rotate(-5deg);
+    }
+    70%{
+        transform: rotate(-5deg)
+    }
+    90%{
+        transform: rotate(5deg)
+    }
+    100%{
+        transform: rotate(5deg);
+    }
 }
