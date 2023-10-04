@@ -1,14 +1,34 @@
+.picto-container{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+}
 .pictos-link{
     width: 30px;
     height: 30px;
     border-radius: 50%;
     display: block;
-    margin: 20px 0 20px;
+    margin: 10px 0 5px;
     transition: all 2000ms ease;
-    animation: ding 2000ms ease-in-out infinite both;
-    
+}
+.pictos-text{
+    margin-right: 10px;
+}
+.pictos-animation{
+    animation: ding 2500ms ease-in-out infinite both;
 }
 
+.pictos-img{
+    width: 100%;
+    height: 100%;
+    
+}
+.animation-img{
+    animation: appear 1000ms ease both;
+    animation-delay: 8s;
+    transform: scale(0);   
+}
 @keyframes ding {
     0%{
         transform: scale(0.9);
@@ -25,18 +45,11 @@
     80%{
         transform: scale(1);
     }
-}
-.pictos-img{
-    width: 100%;
-    height: 100%;
-    animation: appear 1000ms ease both;
-    animation-delay: 15s;
-    transform: scale(0);
-    
-}
-@media screen and (max-width:780px) {
-    .pictos-img{
-        animation-delay: 0s;
+    90%{
+        transform: scale(0.9);
+    }
+    100%{
+        transform: scale(0.9);
     }
 }
 
@@ -47,5 +60,28 @@
     }
     100%{
         transform: scale(1);
+    }
+}
+
+/********** Média Queries **********/
+@media screen and (max-width: 980px) {
+    .pictos-text{
+        font-size: 0.85em;
+        margin-bottom: 5px;
+    }
+    .pictos-link{
+        margin: inherit;
+    }
+}
+@media screen and (max-width:780px) {
+    .pictos-link{
+        width: 30px;
+        height: 30px;
+    }
+    .pictos-img{
+        animation-delay: 0s;
+    }
+    .picto-container{
+        margin-bottom: 10px;
     }
 }
