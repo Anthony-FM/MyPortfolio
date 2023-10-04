@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import {  useSelector } from 'react-redux'
 import store from "../redux/store";
-import { addLoading, addError, addDatas } from "../../feature/myPortefolioFeatures"
+import { addLoading, addError, addDatas, addProjects } from "../../feature/myPortefolioFeatures"
 import { selectMyslice } from "../redux/selector";
 
 export default function useFetch(url) {
@@ -15,7 +15,9 @@ export default function useFetch(url) {
             try {            
                 const response = await fetch(url)                
                 const data = await response.json()                
-                dispatch(addDatas(data))            
+                dispatch(addDatas(data))
+                dispatch(addProjects(data.Projects.studyProjects))
+
             } catch (err) {            
                 console.log('==== fetchData Catch Error ====', err)                
                 dispatch(addError(true))            
