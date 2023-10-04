@@ -1,0 +1,51 @@
+.portfolio{
+    padding: 2%;
+}
+
+.portfolio-title{
+    font-family: 'Permanent Marker', cursive;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.6em;
+}
+.portfolio-titleSection{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+}
+
+.block-left{
+    display: inline-block;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 5px 0 5px 10px;
+    transform: rotate(0deg);
+    margin-right: 5px;
+
+}
+.border-color-blue{
+    border-color: transparent transparent transparent #1152B9;
+}
+.border-color-white{
+    border-color: transparent transparent transparent #fff;
+}
+.block-right{
+    display: inline-block;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 5px 0 5px 10px;
+    transform: rotate(-180deg);
+    margin-left: 5px;
+
+}
+.cards-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+}
