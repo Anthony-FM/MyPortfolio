@@ -1,8 +1,8 @@
 .darkmode-container{
     border: none;
     background-color: transparent;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     cursor: pointer;
     transform-origin: bottom;
     animation: handshake 2000ms ease infinite;
