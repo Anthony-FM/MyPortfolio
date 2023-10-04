@@ -13,7 +13,16 @@ const initialeState = {
     deltaPeriod : 500 - Math.random() * 800,
     period : 80,
     darkMode : false,
-    isBurgerOpen : false
+    isBurgerOpen : false,
+    projects: [],
+    nameOnClick: false,
+    emailOnClick: false,
+    textareaOnClick: false,
+    nameOnChange : "",
+    emailOnChange : "",
+    textareaOnChange : "",
+    submitDisabled : true,
+    messageSend: false
 }
 
 // Actions
@@ -91,6 +100,60 @@ export const addisBurgerOpen = createAction(
         payload : !isBurgerOpen
     })
 )
+export const addProjects = createAction(
+    'add/addProjects',
+    (projects) => ({
+        payload : projects
+    })
+)
+export const addNameOnClick = createAction(
+    'add/onClickName',
+    (nameOnClick) => ({
+        payload : nameOnClick
+    })
+)
+export const addEmailOnClick = createAction(
+    'add/onClickEmail',
+    (emailOnClick) => ({
+        payload : emailOnClick
+    })
+)
+export const addTextareaOnClick = createAction(
+    'add/textareaOnClick',
+    (textareaOnClick) => ({
+        payload : textareaOnClick
+    })
+)
+export const addNameOnChange = createAction(
+    'add/nameOnChange',
+    (nameOnChange) => ({
+        payload : nameOnChange
+    })
+)
+export const addEmailOnChange  = createAction(
+    'add/emailOnChange ',
+    (emailOnChange ) => ({
+        payload : emailOnChange 
+    })
+)
+export const addTextareaOnChange  = createAction(
+    'add/textareaOnChange ',
+    (textareaOnChange) => ({
+        payload : textareaOnChange
+    })
+)
+export const addSubmitDisabled  = createAction(
+    'add/submitDisabled ',
+    (submitDisabled) => ({
+        payload : submitDisabled 
+    })
+)
+export const addMessageSend  = createAction(
+    'add/messageSend ',
+    (messageSend) => ({
+        payload : messageSend 
+    })
+)
 // Reducer 
 
 export default createReducer(initialeState, (builder) => 
@@ -160,5 +223,59 @@ export default createReducer(initialeState, (builder) =>
             draft.isBurgerOpen = true
             return
         }
+    })
+    .addCase(addProjects, (draft, action) => {
+        
+        draft.projects = action.payload
+        return
+        
+    })
+    .addCase(addNameOnClick, (draft, action) => {
+        
+        draft.nameOnClick = action.payload
+        return
+        
+    })
+    .addCase(addEmailOnClick, (draft, action) => {
+        
+        draft.emailOnClick = action.payload
+        return
+        
+    })
+    .addCase(addTextareaOnClick, (draft, action) => {
+        
+        draft.textareaOnClick = action.payload
+        return
+        
+    })
+    .addCase(addNameOnChange, (draft, action) => {
+        
+        draft.nameOnChange = action.payload
+        return
+        
+    })
+    .addCase(addEmailOnChange, (draft, action) => {
+        
+        draft.emailOnChange = action.payload
+        return
+        
+    })
+    .addCase(addTextareaOnChange, (draft, action) => {
+        
+        draft.textareaOnChange = action.payload
+        return
+        
+    })
+    .addCase(addSubmitDisabled, (draft, action) => {
+        
+        draft.submitDisabled = action.payload
+        return
+        
+    })
+    .addCase(addMessageSend, (draft, action) => {
+        
+        draft.messageSend = action.payload
+        return
+        
     })
 )
