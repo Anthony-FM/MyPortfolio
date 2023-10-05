@@ -1,5 +1,7 @@
 // CSS
 import "./index.css"
+// HAsh Link
+import { HashLink as Link} from 'react-router-hash-link'
 // Components
 import DarkModeButton from "../DarkModeButton"
 import BurgerMenu from "../BurgerMenu"
@@ -36,39 +38,39 @@ export default function Navbar(){
     const portfolioIsVisible = useSelector(selectObserver).portfolioIsVisible
     const contactIsVisible = useSelector(selectObserver).contactIsVisible
     return <nav className="navbar">
-        <a href="/#Home">
+        <Link to="#Home">
             <img src={darkMode ? LogoBlue : LogoBlack} alt="Lettre A logo" className="logo" />
-        </a>
+        </Link>
         <ul className={darkMode ? "navbar-ul backgroundColor-white" : "navbar-ul backgroundColor-black"}>
-            <li className="navbar-li" key="about"><a className={ aboutIsVisible ? (darkMode ? "navbar-link color-black " : "navbar-link color-blue ") : (darkMode ? "navbar-link color-blue" : "navbar-link color-white")} href="#About">A Propos</a></li>
-            <li className="navbar-li" key="portfolio"><a className={ portfolioIsVisible ? (darkMode ? "navbar-link color-black" : "navbar-link color-blue"): (darkMode ? "navbar-link color-blue" : "navbar-link color-white")} href="#portfolio">Portfolio</a></li>
-            <li className="navbar-li" key="contact"><a className={contactIsVisible ? (darkMode ? "navbar-link color-black" : "navbar-link color-blue") : (darkMode ? "navbar-link color-blue" : "navbar-link color-white")} href="#contact">Contact</a></li>
+            <li className="navbar-li" key="about"><Link className={ aboutIsVisible ? (darkMode ? "navbar-link color-black " : "navbar-link color-blue ") : (darkMode ? "navbar-link color-blue" : "navbar-link color-white")} to="#About">A Propos</Link></li>
+            <li className="navbar-li" key="portfolio"><Link className={ portfolioIsVisible ? (darkMode ? "navbar-link color-black" : "navbar-link color-blue"): (darkMode ? "navbar-link color-blue" : "navbar-link color-white")} to="#portfolio">Portfolio</Link></li>
+            <li className="navbar-li" key="contact"><Link className={contactIsVisible ? (darkMode ? "navbar-link color-black" : "navbar-link color-blue") : (darkMode ? "navbar-link color-blue" : "navbar-link color-white")} to="#contact">Contact</Link></li>
             
             <DarkModeButton/>
         </ul>
-        <div className={ isBurgerOpen ? ( darkMode ? "navbar-mobile  backgroundColor-blue": "navbar-mobile backgroundColor-black ") : ( darkMode ? "navbar-mobile  backgroundColor-blue": "navbar-mobile backgroundColor-black ")}>
+        <div className={ isBurgerOpen ? ( darkMode ? "navbar-mobile open  backgroundColor-blue": "navbar-mobile open backgroundColor-black ") : ( darkMode ? "navbar-mobile close backgroundColor-blue": "navbar-mobile close backgroundColor-black ")}>
         <BurgerMenu/>
             <ul className={isBurgerOpen ? "navbar-ul-mobile  move-right flex" : "navbar-ul-mobile none"}>
                 <li className="navbar-li-mobile" key="about">
-                    <a className={ darkMode ? "navbar-link color-white" : "navbar-link color-blue"} href="#About">
+                    <Link className={ darkMode ? "navbar-link color-white" : "navbar-link color-blue"} to="#About">
                         <div className="navIcone-container">
                             <img src={ aboutIsVisible ? (darkMode ? AboutWhite : AboutBlue) : (darkMode ? AboutBlack : AboutWhite)} alt="icone a propos" />
                         </div>
-                    </a>
+                    </Link>
                 </li>
                 <li className="navbar-li-mobile" key="portfolio">
-                    <a className={ darkMode ? "navbar-link color-white" : "navbar-link color-blue"} href="#portfolio">
+                    <Link className={ darkMode ? "navbar-link color-white" : "navbar-link color-blue"} to="#portfolio">
                         <div className="navIcone-container">
                             <img src={portfolioIsVisible ? (darkMode ? PortfolioWhite : PortfolioBlue) : (darkMode ? PortfolioBlack : PortfolioWhite)} alt="icone a propos" />
                         </div>
-                    </a>
+                    </Link>
                 </li>
                 <li className="navbar-li-mobile" key="contact">
-                    <a className={ darkMode ? "navbar-link color-white" : "navbar-link color-blue"} href="#contact">
+                    <Link className={ darkMode ? "navbar-link color-white" : "navbar-link color-blue"} to="#contact">
                     <div className="navIcone-container">
                             <img src={contactIsVisible ? (darkMode ? ContactWhite : ContactBlue) : (darkMode ? ContactBlack : ContactWhite)} alt="icone a propos" />
                         </div>
-                    </a>
+                    </Link>
                 </li>
                 
                 <p className={darkMode ? "navbar-darkmode color-white" : "navbar-darkmode color-blue"}>
