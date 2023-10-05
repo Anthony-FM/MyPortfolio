@@ -1,0 +1,33 @@
+footer{
+    width: 100%;
+    
+    display: flex;
+    
+    justify-content: space-around;
+    padding: 5%;
+    align-items: center;
+}
+
+.footer-text{
+    font-size: 1.4em;
+}
+
+.footer-pictosContainer{
+    display: flex;
+    width: 30%;
+}
+
+@media screen and (max-width: 780px) {
+    footer{
+        height: 300px;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .footer-text{
+        font-size: 1em;
+    }
+    .footer-pictosContainer{
+        display: flex;
+        width: 100%;
+    }
+}
