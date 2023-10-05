@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './utils/style/index.css';
-import { BrowserRouter as Router, Route,Routes } from 'react-router-dom';
+import { HashRouter as Router, Route,Routes } from 'react-router-dom';
 
 // Pages
 import Home from './pages/Home'
@@ -13,6 +13,7 @@ import store from './utils/redux/store';
 
 // Components
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -27,6 +28,7 @@ root.render(
           <Route path='*' element={<Error404/>} />
           
         </Routes>
+        <Footer/>
       </Router>
     </Provider>
   </React.StrictMode>
