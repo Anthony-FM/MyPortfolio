@@ -41,14 +41,17 @@ export default function Contact(){
     const regExName = /[a-zA-Z]+[a-zA-Z-]/g
     const regExEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})/g
     
-    let nameError = name.match(regExName) ? "" : "Veuillez entrer un nom ou prénom valable... s'il vous plaît! 😄"
-    let emailError = email.match(regExEmail) ? "" : "Veuillez entrer un email valable... s'il vous plaît! 😄"
+    let nameError = name === "" ? "" : name.match(regExName) ? "" : "Veuillez entrer un nom ou prénom valable... s'il vous plaît! 😄"
+    let emailError = email === "" ? "" : email.match(regExEmail) ? "" : "Veuillez entrer un email valable... s'il vous plaît! 😄"
 
     
     useEffect(() => {
         const regExName = /[a-zA-Z]+[a-zA-Z-]/g
         const regExEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})/g
-    
+        if(name === "" || email === ""){
+            dispatch(addSubmitDisabled(true))
+            return
+        }
         if(name.match(regExName) && email.match(regExEmail)){
             dispatch(addSubmitDisabled(false))
             return
