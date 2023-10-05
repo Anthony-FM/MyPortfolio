@@ -18,7 +18,7 @@
             {
                 "githubLinks": "https://github.com/Anthony-FM/P2_Booki",
                 "link" : "https://anthony-fm.github.io/P2_Booki/",
-                "picture" : "/projects/BookiCapture.png",
+                "picture" : "projects/BookiCapture.png",
                 "description" : ["Premier projet de la formation avec Openclassrooms.","Ojectif: implémenter une interface responsive en intégrant avec HTML5 et CSS3 du contenu conformément à la maquette"],
                 "keywords" : ["HTML5", "CSS3", "Responsive" ],
                 "projectName" : "Booki"
@@ -26,7 +26,7 @@
             {
                 "githubLinks": "https://github.com/Anthony-FM/P3_ohmyfood",
                 "link" : "https://anthony-fm.github.io/P3_ohmyfood/",
-                "picture" : "/projects/OhMyFoodCapture.png",
+                "picture" : "projects/OhMyFoodCapture.png",
                 "description" : ["Deuxième projet de la formation avec Openclassrooms. ","L'objectif est de mettre en oeuvre des effets CSS graphiques avancés en utilisant Sass, de Mettre en place une structure de navigation pour un site web, d'assurer la cohérence graphique d'une site web, d'utiliser un système de gestion de version git et GitHub pour le suivi du projet et de son hébergement et enfin de mettre en place son environnement Front-end"],
                 "keywords" : ["HTML5", "Sass", "Responsive", "Animation"],
                 "projectName" : "Ohmyfood"
@@ -34,7 +34,7 @@
             {
                 "githubLinks": "https://github.com/Anthony-FM/GameOn-website-FR",
                 "link" : "https://anthony-fm.github.io/GameOn-website-FR/",
-                "picture" : "/projects/GameOnCapture.png",
+                "picture" : "projects/GameOnCapture.png",
                 "description" : ["Troisième projet de la formation avec Openclassrooms créer une landing page avec Javascript. ","L'objectif consiste à ajouter le code JavaScript manquant pour que le formulaire de la modale soit pleinement fonctionnel."],
                 "keywords" : ["Javascript", "HTML5", "CSS3", "Responsive" ],
                 "projectName" : "GameOn"
@@ -42,7 +42,7 @@
             {
                 "githubLinks": "https://github.com/Anthony-FM/P6_Front-End-Fisheye",
                 "link" : "https://anthony-fm.github.io/P6_Front-End-Fisheye/index.html",
-                "picture" : "/projects/FishEyeCapture.png",
+                "picture" : "projects/FishEyeCapture.png",
                 "description" : ["Quatrième projet de la formation avec Openclassrooms créer un site accessible pour une plateforme de photographes. ","L'objectif pour ce projet est d'assurer l'accessibilité et de gérer les évènements d'un site avec JavaScript, de développer une application web modulaire avec des design patterns et d'écrire du code Javascript maintenable"],
                 "keywords" : ["Javascript", "HTML5", "CSS3", "Design Pattern", "Accessibilité", "Desktop Only" ],
                 "projectName" : "Fisheye"
@@ -50,14 +50,14 @@
             {
                 "githubLinks": "https://github.com/Anthony-FM/P7_Les_petits_plats",
                 "link" : "https://anthony-fm.github.io/P7_Les_petits_plats/",
-                "picture" : "/projects/LesPetitsPlatCapture.png",
+                "picture" : "projects/LesPetitsPlatCapture.png",
                 "description" : ["Cinquième projet dev de la formation avec Openclassrooms - Développez un algorithme de recherche en JavaScript. ","Ici, il est question d'algorithmie pour résondre un problème avec Javascript"],
                 "keywords" : ["Javascript", "HTML5", "Sass", "Algorithmie", "Responsive" ],
                 "projectName" : "Les petits plat"
             },
             {
                 "githubLinks": "https://github.com/Anthony-FM/Billed-app-FR-Front",
-                "picture" : "/projects/BilledHomeCapture.png",
+                "picture" : "projects/BilledHomeCapture.png",
                 "description" : ["Sixième projet dev de la formation avec Openclassrooms - Débuggez et testez un SaaS RH. ","Objectif: Apprendre à tester et debugger les issue d'un Softwar as a Service RH en utilisant Jest pour les test et Chrome debugger pour le debuggage"],
                 "keywords" : ["Jest", "Chrome Debugger", "Tests Unitaires", "Test d'intégration", "Plan de test End-to-end" ],
                 "projectName" : "Billed"
@@ -65,7 +65,7 @@
             {
                 "githubLinks": "https://github.com/Anthony-FM/Projet11-Kasa/tree/master/kasa",
                 "link" : "https://anthony-fm.github.io/Projet11-Kasa/",
-                "picture" : "/projects/KasaCapture.png",
+                "picture" : "projects/KasaCapture.png",
                 "description" : ["Septième projet dev de la formation avec Openclassrooms - Développez une application Web avec React et React Router. ","Objectif: initiation de React et React-Router en créant des composant avec React et en développant les routes de l'application avec React Router"],
                 "keywords" : ["React", "React-Router","Javascript", "CSS3", "HTML5","Responsive", "Style-Component", "Fetch" ],
                 "projectName" : "Kasa"
@@ -73,14 +73,14 @@
             {
                 "githubLinks": "https://github.com/Anthony-FM/sportsee",
                 "link" : "https://anthony-fm.github.io/sportsee/",
-                "picture" : "/projects/SportseeCapture.png",
+                "picture" : "projects/SportseeCapture.png",
                 "description" : ["Huitième projet dev de la formation avec Openclassrooms. "," Objectif : Créer un tableau de bord analytics avec React en utilisant une bibliothèque Javascript graphique comme Rechart tout en assurant la qualité des données. ","Il fallait également utiliser API Rest comme Postman pour accéder au données et utiliser Fetch pour les intégrer"],
                 "keywords" : ["React", "React-Router","Javascript", "CSS3", "HTML5","Recharts", "API Rest", "Desktop Only", "Fetch" ],
                 "projectName" : "Sportsee"            
             },
             {
                 "githubLinks": "https://github.com/Anthony-FM/P13-ArgentBank",
-                "picture" : "/projects/ArgentBankCapture.png",
+                "picture" : "projects/ArgentBankCapture.png",
                 "description" : ["Neuvième projet dev de la formation avec Openclassrooms: Utilisez une API pour un compte utilisateur bancaire avec React. ","Objectif : Créer une application bancaire avec React ou le client est capable de s'authentifier à une API et de modifier ses informations personnelles (Nom, Prénom), le tout en utilisant un gestionnaire d'état Redux. ","Une seconde étape de ce projet est de modéliser dans un fichier .yaml une API"],
                 "keywords" : ["React", "React-Router","Redux", "CSS3", "HTML5","Javascript", "API Rest", "Fetch" ],
                 "projectName" : "ArgentBank"
@@ -90,7 +90,7 @@
                 "githubLinks2": "https://github.com/Anthony-FM/P14_Modal-Plugin",
                 "npmLink": "https://www.npmjs.com/package/p14-modal-plugin-afm",
                 "link" : "https://anthony-fm.github.io/P14_HRnet/",
-                "picture" : "/projects/HRnetCapture.png",
+                "picture" : "projects/HRnetCapture.png",
                 "description" : ["Dixième projet dev de la formation avec Openclassrooms: Faites passer une librairie jQuery vers React. ","Objectif : refondre une ancience application jQuery en une application React pour en réduire la dette technique, analyser la performance de l'application avec LightHouse, convertir un plugins jQuery en React dans un autre github et l'enregistrer avec npm package pour être réutiliatable par tous. "],
                 "keywords" : ["React", "React-Router","Javascript", "CSS3", "HTML5","Redux", "Responsive", "Npm Package", "React-Table", "React-Datepicker" ],
                 "projectName" : "HRnet"
