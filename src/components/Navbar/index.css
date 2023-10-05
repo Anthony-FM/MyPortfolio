@@ -81,16 +81,27 @@
     }
     .navbar-mobile{
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        /* width: 20%;    */
-        padding: 3%;
+        flex-direction: column;        
+        width: 50px;        
+        
         transform-origin: top; 
         border-radius: 40px;
         align-items: center;
-        transition: all cubic-bezier(0.165, 0.84, 0.44, 1) 1000ms;
-        
+        transition: all cubic-bezier(0.165, 0.84, 0.44, 1) 3000ms;        
     }
+    .close{
+        justify-content: center;
+        height: 50px;
+    }
+    .open{
+        justify-content: space-between;
+        padding: 3%;      
+
+    } 
+    .navbar-darkmode{
+        margin: 15px 0;
+    }   
+
     .navbar-ul-mobile{   
         transition: all 200ms ease;
         transform-origin: right top;
@@ -112,8 +123,9 @@
     }
     .navIcone-container{
         display: flex;
-        width: 30px;
-        height: 30px;
+        width: 20px;
+        height: 20px;
+        margin: 10px 0;
     }
     .navIcone-container img{
         width: 100%;

@@ -83,5 +83,12 @@
     }
     .picto-container{
         margin-bottom: 10px;
+        flex-direction: column;
+    }
+}
+@media screen and (max-width:480px) {
+    .pictos-link{
+        width: 45px;
+        height: 45px;
     }
 }
