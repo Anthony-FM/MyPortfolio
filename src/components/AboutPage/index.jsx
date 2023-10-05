@@ -176,9 +176,9 @@ export default function About({APropos}){
         </h1>
         <div className="about-container">
             <div className={ aboutDescriptionIsVisible? 
-                (DarkMode ? "about-description color-white animation-appearFromLeft" : "about-description backgroundColor-blue animation-appearFromLeft") 
+                (DarkMode ? "about-description color-white " : "about-description backgroundColor-blue ") 
                 : 
-                (DarkMode ? "about-description color-white animation-dissappearFromLeft" : "about-description backgroundColor-blue animation-dissappearFromLeft")} 
+                (DarkMode ? "about-description color-white " : "about-description backgroundColor-blue ")} 
                 ref={aboutDescriptionRef}
             >
                 {APropos.map((apropo, index) => {
