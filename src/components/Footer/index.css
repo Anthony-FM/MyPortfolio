@@ -1,11 +1,11 @@
 footer{
-    width: 100%;
-    
-    display: flex;
-    
+    width: 100%;    
+    display: flex;    
     justify-content: space-around;
     padding: 5%;
     align-items: center;
+    animation: downName 2500ms ease both;
+    animation-delay: 8s;
 }
 
 .footer-text{
