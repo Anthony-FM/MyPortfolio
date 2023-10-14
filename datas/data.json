@@ -1,18 +1,19 @@
 {
-    "presentation": {
+    "Presentation": {
         "title" : [
-            "#OpenToWork",
-            "#FrontEndDèv",
             "#CréateurDeREACTivité",
             "#ArtisanDuJavaScript",
             "#AmoureuxDuWeb",
+            "#OpenToWork",
+            "#FrontEndDev",
+            "#PapaPoule",
             "#CollaborateurFun",
             "#NinjaDesComposants"
         ],
         "name" : "Anthony Fouda-Many.",
         "presentation" : "Un développeur JavaScript et React tout juste diplômé. Mon portfolio reflète mon parcours, de la formation aux projets concrets. Explorez mes réalisations pour voir comment je transforme la passion en code."
     },
-    "APropos" : ["Bonjour, je suis Anthony Fouda-Many, un passionné de développement d'application web JavaScript - React.","Mon parcours unique, du design graphique au développement, m'a permis d'acquérir une expertise solide en React.js, Redux, et JavaScript, tout en utilisant des méthodes agiles et des tests Jest pour garantir la qualité. ","Mon amour pour le basketball et la science-fiction reflète mon esprit persévérant et explorateur, que je canalise dans ma créativité en développement.","Mon ambition est de marier mon bagage avec ma passion pour le développement, en créant des interfaces fonctionnelles.","Je suis enthousiaste à l'idée de rejoindre une équipe dynamique pour contribuer à des projets inspirants."],
+    "APropos" : ["Bonjour, je suis Anthony Fouda-Many, un passionné de développement d'application web JavaScript - React.","Mon parcours unique, du design graphique au développement, m'a permis d'acquérir une expertise solide en React.js, Redux, et JavaScript, tout en utilisant des méthodes agiles et des tests Jest pour garantir la qualité de code. ","Mon amour pour le basketball et la science-fiction reflète mon esprit persévérant et explorateur, que je canalise dans ma créativité en développement.","Mon ambition est de marier mes divers expériences avec ma passion pour le développement, en créant des interfaces fonctionnelles et créatives.","Je suis enthousiaste à l'idée de rejoindre une équipe dynamique pour contribuer à des projets inspirants."],
     
     "Projects": {
         "title" : "Projets Openclassrooms",
@@ -69,7 +70,7 @@
                 "link" : "https://anthony-fm.github.io/Projet11-Kasa/",
                 "picture" : "projects/KasaCapture.png",
                 "description" : ["Septième projet dev de la formation avec Openclassrooms - Développez une application Web avec React et React Router. ","Objectif: initiation de React et React-Router en créant des composant avec React et en développant les routes de l'application avec React Router"],
-                "keywords" : ["React", "React-Router","Javascript", "CSS3", "HTML5","Responsive", "Style-Component", "Fetch" ],
+                "keywords" : ["React", "React-Router","Javascript", "CSS3", "HTML5","Responsive", "Style-Component", "Fetch", "Algorithmie" ],
                 "projectName" : "Kasa"
             },
             {
@@ -84,7 +85,7 @@
                 "githubLinks": "https://github.com/Anthony-FM/P13-ArgentBank",
                 "picture" : "projects/ArgentBankCapture.png",
                 "description" : ["Neuvième projet dev de la formation avec Openclassrooms: Utilisez une API pour un compte utilisateur bancaire avec React. ","Objectif : Créer une application bancaire avec React ou le client est capable de s'authentifier à une API et de modifier ses informations personnelles (Nom, Prénom), le tout en utilisant un gestionnaire d'état Redux. ","Une seconde étape de ce projet est de modéliser dans un fichier .yaml une API"],
-                "keywords" : ["React", "React-Router","Redux", "CSS3", "HTML5","Javascript", "API Rest", "Fetch" ],
+                "keywords" : ["React", "React-Router","Redux", "CSS3", "HTML5","Javascript", "API Rest", "Algorithmie", "Fetch" ],
                 "projectName" : "ArgentBank"
             },
             {
@@ -93,7 +94,7 @@
                 "npmLink": "https://www.npmjs.com/package/p14-modal-plugin-afm",
                 "link" : "https://anthony-fm.github.io/P14_HRnet/",
                 "picture" : "projects/HRnetCapture.png",
-                "description" : ["Dixième projet dev de la formation avec Openclassrooms: Faites passer une librairie jQuery vers React. ","Objectif : refondre une ancience application jQuery en une application React pour en réduire la dette technique, analyser la performance de l'application avec LightHouse, convertir un plugins jQuery en React dans un autre github et l'enregistrer avec npm package pour être réutiliatable par tous. "],
+                "description" : ["Dixième projet dev de la formation avec Openclassrooms: Faire passer une librairie jQuery vers React. ","Objectif : refondre une ancience application jQuery en une application React pour en réduire la dette technique, analyser la performance de l'application avec LightHouse, convertir un plugins jQuery en React dans un autre github et l'enregistrer avec npm package pour être réutiliatable par tous. "],
                 "keywords" : ["React", "React-Router","Javascript", "CSS3", "HTML5","Redux", "Responsive", "Npm Package", "React-Table", "React-Datepicker" ],
                 "projectName" : "HRnet"
             }
