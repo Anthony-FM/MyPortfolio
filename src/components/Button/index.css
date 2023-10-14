@@ -7,8 +7,8 @@
     position: relative;
     overflow: hidden;
     z-index: 1;
-    animation: leftButton 2500ms ease both;
-    animation-delay: 10s;
+    animation: leftButton 2500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+    animation-delay: 18s;
 }
 
 @keyframes leftButton{

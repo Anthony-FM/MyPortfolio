@@ -7,7 +7,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    transition: all 1s ease-in-out;
+    transition: all 1s cubic-bezier(.64,.12,.43,.94);
     transform-origin: top;
 }
 
@@ -21,7 +21,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    animation: containerDown 2000ms ease-in-out both;
+    animation: containerDown 2000ms cubic-bezier(.64,.12,.43,.94) both;
 }
 .home-first{
     color: #1152B9;
@@ -37,7 +37,7 @@
 
 .home-img-hand{
     width: 40px;
-    animation: handshake 1000ms infinite ease-in-out;
+    animation: handshake 1000ms infinite cubic-bezier(.64,.12,.43,.94);
     transform-origin: bottom;
 }
 
@@ -45,7 +45,7 @@
     font-size: 2.6em;
     font-weight: 900;
     margin: 20px 0 5px 10px;
-    animation: downName 2000ms ease both;
+    animation: downName 3000ms cubic-bezier(.76,.09,.66,.55) both;
     animation-delay: 3000ms;
     font-family: 'Permanent Marker', cursive;
 }
@@ -57,13 +57,13 @@
     margin-bottom: 15px;
     margin-left: 20px;
     animation: rightWorks 3000ms ease both;
-    animation-delay: 5s;
+    animation-delay: 11s;
 }
 
 .citation{
     margin: 10px;
     width: 50%;
-    animation: opacity 2000ms 8s ease-in-out both;
+    animation: opacity 2000ms 20s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
 .barre{
@@ -79,7 +79,7 @@
     text-align: left;
     margin-bottom: 50px;
     animation: downName 2000ms ease both;
-    animation-delay: 7000ms;
+    animation-delay: 13s;
     
 }
 
@@ -93,7 +93,7 @@
     width: 85%;
     height: 100%;   
     display: flex;
-    animation: move 20000ms ease-in-out forwards;
+    animation: move 16000ms 1s ease-in-out forwards;
     transition: all 200ms ease-in-out;
     clip-path: circle(20% at 25% 25%);
 }
@@ -147,8 +147,9 @@
         padding: 30px 8% 0 8%;
         display: flex;
         flex-direction:column;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
+        animation-delay: 2s;
     }
     .home-container .container:nth-child(2){
         display: none;
@@ -157,6 +158,7 @@
         width: 100%;
         height: 100vh;
         align-items: center;
+        justify-content: flex-start;
     }
     .home-first{
         color: #1152B9;
@@ -168,13 +170,16 @@
 
     .home-name{
         font-size: 1.4em;
-        margin-top: 15px;
+        margin: 15px 0 0;
+        animation-delay: 5s;
+        
     }
 
     .home-works{
         font-size: 1.1em;
         text-align: center;
-        margin-left: 0;
+        margin: 0;
+        animation-delay: 9s;
     }  
     .barre{
         height: 18px;
@@ -182,7 +187,8 @@
     .home-paragraphe{
         font-size: 0.85em;
         text-align: justify;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
+        animation-delay: 13s;
     }
     .imgContainer{         
         display: none;
@@ -192,7 +198,7 @@
         width: 80%;
         height: 472px;
         display: flex;
-        animation: moveMobile 20000ms ease-in-out forwards;
+        animation: moveMobile 12000ms 3s cubic-bezier(.64,.12,.43,.94) both;
         transition: all 200ms ease-in-out;
         clip-path: circle(40% at 25% 25%);
         justify-content: center;
@@ -201,31 +207,35 @@
     }  
     
     .imgBis-container{
-        animation: containerDown 2000ms ease-in-out both;
-        animation-delay: 3000ms;
+        animation: containerDown 2000ms 2000ms ease-in-out both;
         width: 100%;
+        margin-top: 10px;
+        margin-bottom: 30px;
     } 
     @keyframes moveMobile{
         0%{
-            clip-path: circle(15% at 35% 25%);
+            clip-path: circle(15% at 33% 20%);
         }
         20%{
-            clip-path: circle(15% at 35% 30%);
+            clip-path: circle(15% at 35% 23%);
         }
-        40%{
+        35%{
+            clip-path: circle(15% at 30% 30%);
+        }
+        45%{
             clip-path: circle(15% at 40% 30%);
         }
-        60%{
-            clip-path: circle(20% at 65% 65%);
+        70%{
+            clip-path: circle(20% at 80% 65%);
         }
         100%{
-            clip-path: circle(35% at 55% 50%);
+            clip-path: circle(45% at 50% 50%);
         }
     }
     .citation{
         display: flex;
-        animation: downName 1000ms ease both;
-        animation-delay: 15s;
+        animation: appearFromLeft 1500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+        animation-delay: 23s;
     }
 }
 

@@ -48,9 +48,9 @@ export default function Navbar(){
             
             <DarkModeButton/>
         </ul>
-        <div className={ isBurgerOpen ? ( darkMode ? "navbar-mobile open  backgroundColor-blue": "navbar-mobile open backgroundColor-black ") : ( darkMode ? "navbar-mobile close backgroundColor-blue": "navbar-mobile close backgroundColor-black ")}>
+        <div className={ isBurgerOpen ? ( darkMode ? "navbar-mobile spaceWhenOpen backgroundColor-blue": "navbar-mobile spaceWhenOpen backgroundColor-black ") : ( darkMode ? "navbar-mobile spaceWhenClose backgroundColor-blue": "navbar-mobile spaceWhenClose backgroundColor-black ")}>
         <BurgerMenu/>
-            <ul className={isBurgerOpen ? "navbar-ul-mobile  move-right flex" : "navbar-ul-mobile none"}>
+            <ul className={isBurgerOpen ? "navbar-ul-mobile animation-appearFromRight flex" : "navbar-ul-mobile animation-dissappearFromRight remove-right none"}>
                 <li className="navbar-li-mobile" key="about">
                     <Link className={ darkMode ? "navbar-link color-white" : "navbar-link color-blue"} to="#About">
                         <div className="navIcone-container">

@@ -38,13 +38,17 @@
 
 .about-img{
     width: 50%;
-    clip-path: circle(38% at 50% 50%);
+    clip-path: circle(35% at 48% 50%);
+    display: flex;
+    justify-content: center;
 }
-
+.about-img picture{
+    width: 70%;
+}
 
 .about-img img{
     width: 100%;
-    height: 100%;
+    height: 110%;
     object-fit: cover;
 }
 
@@ -88,10 +92,12 @@
     }
     .about-container{
         flex-direction: column-reverse;
+    }.about-img picture{
+        width: inherit;
     }
     .about-img{
         width: 100%;
-        clip-path: circle(38% at 55% 50%);
+        clip-path: circle(40% at 48% 55%);
         margin-bottom: 20px;
     }
     .about-description{

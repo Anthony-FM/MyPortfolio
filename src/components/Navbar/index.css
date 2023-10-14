@@ -3,8 +3,8 @@
     width: 100%;
     padding: 10px 8% 10px 8%;
     position: fixed;
-    animation: downName 2500ms ease both;
-    animation-delay: 8s;
+    animation: downName 3500ms cubic-bezier(.76,.09,.66,.55) both;
+    animation-delay: 18s;
     z-index: 99999;
     align-items: center;
     justify-content: space-between;
@@ -75,6 +75,8 @@
 @media screen and (max-width: 780px) {
     .navbar{
         align-items: flex-start;
+        margin-top: 20px;
+        animation-delay: 16s;
     }
     .navbar-ul{
         display: none;
@@ -89,14 +91,13 @@
         align-items: center;
         transition: all cubic-bezier(0.165, 0.84, 0.44, 1) 3000ms;        
     }
-    .close{
+    .spaceWhenClose{
         justify-content: center;
         height: 50px;
     }
-    .open{
+    .spaceWhenOpen{
         justify-content: space-between;
         padding: 3%;      
-
     } 
     .navbar-darkmode{
         margin: 15px 0;
@@ -137,36 +138,5 @@
         flex-direction: column;
         justify-content: space-between;
     }
-    .animation-close-modale{
-        animation: close 1000ms ease-in-out both;
-    }
-    .animation-open-modale{
-        animation: open 1000ms ease-in-out both;
-    }
     
-}
-
-.move-right{
-    transform: scale(1);
-}
-
-@keyframes close {
-    0%{
-        transform: scale(1);
-    }
-    99%{
-        transform: scale(0);
-    }
-    100%{
-        display: none;
-    }
-}
-@keyframes open {
-    0%{
-        display: flex;
-        transform: scale(0);
-    }
-    100%{
-        transform: scale(1);      
-    }
 }
