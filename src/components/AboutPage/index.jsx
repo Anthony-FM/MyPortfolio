@@ -11,7 +11,8 @@ import AboutText from "../AboutText"
 import { addObserverAbout, addObserverAboutDescription, addObserverAboutImg, addObserverSkills } from "../../feature/myIntersectionObserver"
 
 // assets
-import ME from "../../assets/me.jpg"
+import ME from "../../assets/me-left.jpg"
+import MEdown from "../../assets/me-down.jpg"
 
 import React from "../../assets/skills/react-white.svg"
 import ReactBlack from "../../assets/skills/react-black.svg"
@@ -47,7 +48,6 @@ export default function About({APropos}){
     const aboutImgRef = useRef()
     const skillsRef = useRef()
     // state aboutRef
-    const aboutIsVisible = useSelector(selectObserver).aboutIsVisible
     const aboutDescriptionIsVisible = useSelector(selectObserver).aboutDescriptionIsVisible
     const aboutImgIsVisible = useSelector(selectObserver).aboutImgIsVisible
     const skillsIsVisible = useSelector(selectObserver).skillContainerIsVisible
@@ -145,12 +145,15 @@ export default function About({APropos}){
         };
     
         const callback = (entries) => {
-          entries.forEach((entry) => {
+          entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
-              entry.target.classList.add('animation-appearFromDown');
+                console.log(index)
+              entry.target.classList.add(`animation-appearFromDown`);
+              entry.target.classList.add(`delay-${index}`);
               entry.target.classList.remove('animation-dissappearFromDown');
             } else {
-              entry.target.classList.add('animation-dissappearFromDown');
+                entry.target.classList.add('animation-dissappearFromDown');
+                entry.target.classList.remove(`delay-${index}`);
               entry.target.classList.remove('animation-appearFromDown');
             }
           });
@@ -168,7 +171,7 @@ export default function About({APropos}){
       }, []);  
 
     return <section className={DarkMode ? "about backgroundColor-blue ": "about"} id="About" ref={aboutRef}>
-        <h1 className={aboutIsVisible ? 
+        <h1 className={aboutImgIsVisible ? 
             (DarkMode ? "about-title color-white animation-appearFromUP" : "about-title color-blue animation-appearFromUP") 
             : 
             (DarkMode ? "about-title color-white animation-dissappearFromUP" : "about-title color-blue animation-dissappearFromUP")}>
@@ -193,8 +196,25 @@ export default function About({APropos}){
                className={aboutImgIsVisible ? 
                 (DarkMode ? "about-img animation-appearFromRight" : "about-img animation-appearFromRight") : "about-img animation-dissappearFromRight"}
                 ref={aboutImgRef}
-            >
-                <img src={ME} alt="me" />
+            >     
+                <picture>
+                    <source 
+                        media="(max-width: 780px"
+                        type="image/jpeg"
+                        srcSet={`${MEdown} 780w`}
+                        sizes="780px"
+                    />    
+                    <source 
+                        media="(min-width: 780px"
+                        type="image/jpeg"
+                        srcSet={`${ME} 781w`}
+                        sizes="781px"
+                    />   
+                    <img src={ME} alt="anthony fouda-many"/>
+                </picture>          
+                    
+
+                
             </div>
         </div>
         <div className={skillsIsVisible? (DarkMode ? "containertitleAndSkills color-white backgroundColor-ligthBlack animation-appearFromDown" : "containertitleAndSkills color-blue animation-appearFromDown") : (DarkMode ? "containertitleAndSkills color-white backgroundColor-ligthBlack animation-dissappearFromDown" : "containertitleAndSkills color-blue animation-dissappearFromDown")}>
