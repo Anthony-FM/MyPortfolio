@@ -4,6 +4,12 @@ import store from "../redux/store";
 import { addLoading, addError, addDatas, addProjects } from "../../feature/myPortefolioFeatures"
 import { selectMyslice } from "../redux/selector";
 
+/**
+ * @typedef {Object} Get
+ * @param {string} url 
+ * @property {Object} datas
+ * @returns {{Object}}
+ */
 export default function useFetch(url) {
     const dispatch = store.dispatch
     
