@@ -10,8 +10,9 @@ import About from "../../components/AboutPage"
 import PortefolioPage from "../../components/PortfolioPage"
 import Contact from "../../components/ContactPage"
 
+
 export default function Home(){
-    const { datas, isLoading, error} = useFetch("../data.json")
+    const { datas, isLoading, error} = useFetch("./datas/data.json")
     
     return <> {
         isLoading ? <Loading/>
@@ -19,9 +20,9 @@ export default function Home(){
         <div>
 
             <HomePage 
-                 titles={datas.presentation.title} 
-                 presentation={datas.presentation.presentation}
-                 name={datas.presentation.name}
+                 titles={datas.Presentation.title} 
+                 presentation={datas.Presentation.presentation}
+                 name={datas.Presentation.name}
              />
             <About 
                 APropos={datas.APropos}
