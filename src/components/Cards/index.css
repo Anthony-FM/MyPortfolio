@@ -58,16 +58,6 @@
     position: relative;
     width: max-content;
 }
-.project-title::after{
-    content: '';
-    width: 101%;
-    height: 2px;
-    background-color: #fff;
-    position: absolute;
-    bottom: -2px;
-    right: 10px;
-    border-radius: 3px;
-}
 
 .description{
     padding: 5%;
@@ -195,6 +185,6 @@
     
 
     .card{
-        height: 560px;
+        height: 580px;
     }
 }

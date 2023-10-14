@@ -2,7 +2,7 @@
 import './index.css'
 // Components
 import Keywords from '../Keywords'
-import Pictos from '../Pictos'
+import PictosFooter from '../PictosFooter'
 //assets
 import Github from '../../assets/skills/github.svg'
 import PcWhite from '../../assets/pc-white.svg'
@@ -43,12 +43,12 @@ export default function Cards({picture, githubLinks, link, description, keywords
                 }
                 <div className="links-container">
 
-                    {link ? <Pictos 
+                    {link ? <PictosFooter 
                         link={link}
                         img={darkMode ? PcBlue : PcWhite}
                         text="Visitez le projet: "
                     /> : ""}
-                    <Pictos 
+                    <PictosFooter 
                         link={githubLinks}
                         img={Github}
                         text="Voir le code github: "
