@@ -41,7 +41,7 @@ export default function HomePage({titles, presentation, name}){
     // Intersection Observer
     const homeRef = useRef()
     const homeIsVisible = useSelector(selectObserver).homeIsVisible
-    //
+    // Ratio
     const ratio = 0.1
     const y = Math.round(window.innerHeight * ratio)    
 
@@ -51,7 +51,7 @@ export default function HomePage({titles, presentation, name}){
                 dispatch(addObserverHome(entry.isIntersecting))            
         },{
             // rootMargin: `-${window.innerHeight - y - 1}px 0px -${y}px 0px`
-            threshold: 0.8
+            threshold: 0.4
             
         })
         observer.observe(homeRef.current)
@@ -72,12 +72,18 @@ export default function HomePage({titles, presentation, name}){
             }
     
             if(!isDeleting && upDatedText === fullText) {
-                dispatch(addChangeStateOfisDeleting(true))
-                dispatch(addDelta(period))
+                // Pause avant de supprimer le texte
+                setTimeout(() => {
+                    dispatch(addChangeStateOfisDeleting(false))
+                }, 1300)
+                setTimeout(() => {
+                    dispatch(addChangeStateOfisDeleting(true))
+                    dispatch(addDelta(period))
+                }, 1300)
             } else if(isDeleting && upDatedText.length === 1) {
                 dispatch(addChangeStateOfisDeleting(false))
                 dispatch(addRemoveLoopNumber(loopNumber + 1))
-                dispatch(addDelta(300))
+                dispatch(addDelta(100))
             }
         }
         let ticker = setInterval(() => {
@@ -90,48 +96,51 @@ export default function HomePage({titles, presentation, name}){
     
     
     return <section 
-                className={ homeIsVisible === true ? (darkMode ? "home-container backgroundColor-black animation-appearFromUP" : "home-container animation-appearFromUP") : (darkMode ? "home-container backgroundColor-black animation-dissappearFromUP" : "home-container animation-dissappearFromUP")} 
+                className={ darkMode ? " backgroundColor-black " : ""} 
                 id='Home'
                 ref={homeRef}
             >
-        
-        <div className="container">
-            <div className="imgBis-container">
-                <div className="imgContainerBis">
-                    <img src={MyPicture} alt="Anthony Fouda-Many" className='home-img-me'/>
-                </div>
-            </div>
-            <p className='home-first'>Hello <img src={Hello} className='home-img-hand' alt='hand saying hello'/> je m'appelle:</p>
-            <h1 className={ darkMode ? "home-name color-white" : "home-name"}>{name}</h1>
-            <h2 className="home-works"> Développeur d'application <br/>Javascript - React </h2> 
-            <p className={darkMode ? "citation color-grey-light" : "citation color-lightBlue"}>{mainTitle}<span className={darkMode ? "barre backgroundColor-white" : "barre backgroundColor-black"}></span></p>
-            <p className={darkMode ? "home-paragraphe color-white" : "home-paragraphe"}>{presentation} </p>
-            <Button text="Mon CV" link={CV} img={darkMode ? BoxArrowWhite : BoxArrow} imgName="pdf-picto" target="_blank"/>
+        <div className={ homeIsVisible === true ? "home-container animation-appearFromUP" : "home-container animation-dissappearFromUP" } >
 
+            <div className="container">
+                <div className="imgBis-container">
+                    <div className="imgContainerBis">
+                        <img src={MyPicture} alt="Anthony Fouda-Many" className='home-img-me'/>
+                    </div>
+                </div>
+                <p className='home-first'>Hello <img src={Hello} className='home-img-hand' alt='hand saying hello'/> je m'appelle:</p>
+                <h1 className={ darkMode ? "home-name color-white" : "home-name"}>{name}</h1>
+                <h2 className="home-works"> Développeur d'application <br/>Javascript - React </h2> 
+                <p className={darkMode ? "citation color-grey-light" : "citation color-lightBlue"}>{mainTitle}<span className={darkMode ? "barre backgroundColor-white" : "barre backgroundColor-black"}></span></p>
+                <p className={darkMode ? "home-paragraphe color-white" : "home-paragraphe"}>{presentation} </p>
+                <Button text="Mon CV" link={CV} img={darkMode ? BoxArrowWhite : BoxArrow} imgName="pdf-picto" target="_blank"/>
+
+            </div>
+            <div className="container">
+                <div className="home-left-container">
+
+                    <div className="imgContainer">
+                        <img src={MyPicture} alt="Anthony Fouda-Many" className='home-img-me'/>
+                    </div>
+                    <div className="pictos-container">
+                        <Pictos 
+                            link="https://github.com/Anthony-FM"
+                            img={darkMode ? Github: GithubBlack }
+                            imgName="github link"
+                            animation='true'
+                        />
+                        <Pictos 
+                            link="https://www.linkedin.com/in/anthony-fouda-many/"
+                            img={darkMode ? LinkedinBlue :Linkedin}
+                            imgName="linkedin link"
+                            animation='true'
+                        />
+                    </div>
+                    
+
+                </div>
         </div>
-        <div className="container">
-            <div className="home-left-container">
 
-                <div className="imgContainer">
-                    <img src={MyPicture} alt="Anthony Fouda-Many" className='home-img-me'/>
-                </div>
-                <div className="pictos-container">
-                    <Pictos 
-                        link="https://github.com/Anthony-FM"
-                        img={darkMode ? Github: GithubBlack }
-                        imgName="github link"
-                        animation='true'
-                    />
-                    <Pictos 
-                        link="https://www.linkedin.com/in/anthony-fouda-many/"
-                        img={darkMode ? LinkedinBlue :Linkedin}
-                        imgName="linkedin link"
-                        animation='true'
-                    />
-                </div>
-                
-
-            </div>
         </div>
     </section>
 }
