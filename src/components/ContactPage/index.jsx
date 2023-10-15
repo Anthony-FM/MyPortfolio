@@ -67,8 +67,7 @@ export default function Contact(){
             'template_5awtzcw', 
             e.target,
             'qlU48O8YbJQPhp3Nk'
-            ).then(res => {
-                console.log(res)
+            ).then(() => {
                 dispatch(addMessageSend(true))
                 setTimeout(() => {
 

@@ -147,7 +147,6 @@ export default function About({APropos}){
         const callback = (entries) => {
           entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
-                console.log(index)
               entry.target.classList.add(`animation-appearFromDown`);
               entry.target.classList.add(`delay-${index}`);
               entry.target.classList.remove('animation-dissappearFromDown');
