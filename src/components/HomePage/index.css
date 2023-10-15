@@ -149,7 +149,7 @@
         flex-direction:column;
         justify-content: flex-start;
         align-items: center;
-        animation-delay: 2s;
+        /* animation-delay: 2s; */
     }
     .home-container .container:nth-child(2){
         display: none;

@@ -105,7 +105,7 @@ code {
   animation: dissappearFromLeft 1000ms cubic-bezier(1,.05,.75,1.02) both ;
 }
 .animation-appearFromRight{
-  animation: appearFromRight 1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: appearFromRight 1100ms cubic-bezier(.7,.22,.57,1.37) both;
 }
 .animation-dissappearFromRight{
   animation: dissappearFromRight 1000ms cubic-bezier(1,.05,.75,1.02) both;
@@ -148,7 +148,7 @@ code {
 /* Keyframes */
 @keyframes appearFromUP {
   0%{
-    transform: translateY(-10px);
+    transform: translateY(-50px);
     opacity: 0;
   }
   100%{
