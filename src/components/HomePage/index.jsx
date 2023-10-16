@@ -66,20 +66,23 @@ export default function HomePage({titles, presentation, name}){
             let upDatedText = isDeleting ? fullText.substring(0, mainTitle.length - 1) : fullText.substring(0, mainTitle.length + 1)
     
             dispatch(addTitleText(upDatedText));
-    
+            
+            //
             if (isDeleting) {
                 dispatch(prevDelta => prevDelta /2)
             }
-    
+            // Dès que le texte est entier, on fait une pause avant de supprimer
             if(!isDeleting && upDatedText === fullText) {
-                // Pause avant de supprimer le texte
+                // Pause avant de supprimer le texte              
+
                 setTimeout(() => {
-                    dispatch(addChangeStateOfisDeleting(false))
-                }, 1300)
-                setTimeout(() => {
+                    
                     dispatch(addChangeStateOfisDeleting(true))
                     dispatch(addDelta(period))
-                }, 1300)
+
+                }, 800)
+            // Pendant le suppression du texte, dès que la taille du mot arrive à un,
+            // on change l'état, on change de mot et de periode
             } else if(isDeleting && upDatedText.length === 1) {
                 dispatch(addChangeStateOfisDeleting(false))
                 dispatch(addRemoveLoopNumber(loopNumber + 1))
