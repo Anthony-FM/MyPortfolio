@@ -10,12 +10,24 @@ import Cards from '../Cards';
 import Sort from '../Sort';
 // Action
 import { addObserverPortfolio } from '../../feature/myIntersectionObserver';
+import { toggleMyPersonalProjetIsOpen, toggleOpenclassroomsProjectsIsOpen } from '../../feature/myPortefolioFeatures';
 
 export default function PortefolioPage(){
-    const datasProject = useSelector(selectMyslice).projects    
-    const title = useSelector(selectMyslice).datas.Projects.title
-    const studyProjects = datasProject
+    // OpenClassRooms
+    const openclassrooms = useSelector(selectMyslice).datas.Projects[0] // Récupération du titre et du logo
+    const openclassrommsTitle = openclassrooms.title
+    const openclassroomsPicture = openclassrooms.picture
+    const openclassroomsProjects = useSelector(selectMyslice).openclassroomsProjets // Les projets
+    const ocProjectsIsOpen = useSelector(selectMyslice).openclassroomsProjetsIsOpen
+    
+    // MyPersonalProjet
+    const myPersonalProjets = useSelector(selectMyslice).myPersonalProjet
+    const myPersonalProjetData = useSelector(selectMyslice).datas.Projects[1]
+    const myPersonalProjetDataTitle = myPersonalProjetData.title
+    const myPersonalProjetDataPicture = myPersonalProjetData.picture
+    const myPersonalProjectsIsOpen = useSelector(selectMyslice).myPersonalProjetIsOpen
     const darkMode = useSelector(selectMyslice).darkMode    
+    
 
     // Dispatch
     const dispatch = useDispatch()
@@ -71,15 +83,50 @@ export default function PortefolioPage(){
     return <section className={ darkMode ? 'portfolio backgroundColor-black' : 'portfolio'} id='portfolio' ref={portfolioRef}>
         <h1 className={ portfolioIsVisible ? ( darkMode ? "portfolio-title color-white animation-appearFromUP" : "portfolio-title color-blue animation-appearFromUP") : ( darkMode ? "portfolio-title color-white animation-dissappearFromUP" : "portfolio-title color-blue animation-dissappearFromUP")}>Portfolio...</h1>
         
-        <h2 className={portfolioIsVisible ? (darkMode ? "portfolio-titleSection color-white animation-appearFromLeft" : "portfolio-titleSection animation-appearFromLeft") : (darkMode ? "portfolio-titleSection color-white animation-dissappearFromLeft" : "portfolio-titleSection animation-dissappearFromLeft")}>
-            <span className="block-left border-color-blue"></span>
-            {title}
-            <span className="block-right border-color-blue"></span>
-        </h2>
-        <Sort/>
 
-        <div className="cards-container">
-            {studyProjects ? studyProjects.map((projet, index) => {
+        <h2 className={portfolioIsVisible ? (darkMode ? "portfolio-titleSection color-white animation-appearFromLeft" : "portfolio-titleSection animation-appearFromLeft") : (darkMode ? "portfolio-titleSection color-white animation-dissappearFromLeft" : "portfolio-titleSection animation-dissappearFromLeft")}
+        onClick={() => dispatch(toggleOpenclassroomsProjectsIsOpen())}
+        >
+            <span className={ocProjectsIsOpen ? "block-down border-color-blue" : "block-left border-color-blue"}></span>
+            <div className="logoContainer">
+              <img src={openclassroomsPicture} alt="openclassrooms"  />
+            </div> 
+            
+            {openclassrommsTitle}
+            
+            <span className={ocProjectsIsOpen ? "block-down border-color-blue" : "block-right border-color-blue"}></span>
+        </h2>
+        <div className={ocProjectsIsOpen ? "cards-container" : "none"}>
+        <Sort index={0}/>
+            {openclassroomsProjects ? openclassroomsProjects.map((projet, index) => {
+              return <Cards
+              picture={projet.picture}
+              keywords={projet.keywords}
+              index={index}
+              githubLinks={projet.githubLinks}
+              link={projet.link}
+              projectName={projet.projectName}
+              description={projet.description}
+                    key={`${index}-${projet.projectName}`}
+                    />
+            }) : ""}
+        </div>       
+        
+        <h2 className={portfolioIsVisible ? (darkMode ? "portfolio-titleSection color-white animation-appearFromLeft" : "portfolio-titleSection animation-appearFromLeft") : (darkMode ? "portfolio-titleSection color-white animation-dissappearFromLeft" : "portfolio-titleSection animation-dissappearFromLeft")}
+        onClick={() => dispatch(toggleMyPersonalProjetIsOpen())}
+        >
+            <span className={myPersonalProjectsIsOpen ? "block-down border-color-blue" : "block-left border-color-blue"}></span>
+            <div className="logoContainer">
+              <img src={myPersonalProjetDataPicture} alt="openclassrooms"  />
+            </div> 
+            
+            {myPersonalProjetDataTitle}
+            
+            <span className={myPersonalProjectsIsOpen ? "block-down border-color-blue" : "block-right border-color-blue"}></span>
+        </h2>
+        <div className={myPersonalProjectsIsOpen ? "cards-container" : "none"}>
+              <Sort index={1}/>
+            {myPersonalProjets.length > 0 ? myPersonalProjets.map((projet, index) => {
             return <Cards
                     picture={projet.picture}
                     keywords={projet.keywords}
@@ -90,7 +137,7 @@ export default function PortefolioPage(){
                     description={projet.description}
                     key={`${index}-${projet.projectName}`}
                     />
-            }) : ""}
+            }) : <p className={darkMode? "color-white" : "color-black"}>"Patience! Mes nouveaux Projets arrivent bientôt...😏"</p>}
         </div>
         
     </section>
