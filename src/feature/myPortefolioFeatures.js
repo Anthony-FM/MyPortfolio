@@ -14,7 +14,6 @@ const initialeState = {
     period : 80,
     darkMode : false,
     isBurgerOpen : false,
-    projects: [],
     nameOnClick: false,
     emailOnClick: false,
     textareaOnClick: false,
@@ -22,7 +21,11 @@ const initialeState = {
     emailOnChange : "",
     textareaOnChange : "",
     submitDisabled : true,
-    messageSend: false
+    messageSend: false,
+    openclassroomsProjetsIsOpen: false,
+    openclassroomsProjets: [],
+    myPersonalProjet: [],
+    myPersonalProjetIsOpen: false
 }
 
 // Actions
@@ -100,12 +103,6 @@ export const addisBurgerOpen = createAction(
         payload : !isBurgerOpen
     })
 )
-export const addProjects = createAction(
-    'add/addProjects',
-    (projects) => ({
-        payload : projects
-    })
-)
 export const addNameOnClick = createAction(
     'add/onClickName',
     (nameOnClick) => ({
@@ -154,10 +151,34 @@ export const addMessageSend  = createAction(
         payload : messageSend 
     })
 )
-// Reducer 
-
+export const toggleOpenclassroomsProjectsIsOpen  = createAction(
+    'toggle/openclassroomsProjects ',
+    (openclassroomsProjetsIsOpen) => ({
+        payload : !openclassroomsProjetsIsOpen
+    })
+)
+export const addOpenclassroomsProjects  = createAction(
+    'add/openclassroomsProjects ',
+    (openclassroomsProjets) => ({
+        payload : openclassroomsProjets
+    })
+)
+export const addMyPersonalProjet  = createAction(
+    'add/myPersonalProjet ',
+    (myPersonalProjet) => ({
+        payload : myPersonalProjet
+    })
+)
+export const toggleMyPersonalProjetIsOpen  = createAction(
+    'toggle/MyPersonalProjet ',
+    (myPersonalProjetIsOpen) => ({
+        payload : !myPersonalProjetIsOpen
+    })
+)
+        // Reducer 
+        
 export default createReducer(initialeState, (builder) => 
-    builder
+        builder
     .addCase(addDatas, (draft, action) => {
         
         draft.datas = action.payload
@@ -224,12 +245,6 @@ export default createReducer(initialeState, (builder) =>
             return
         }
     })
-    .addCase(addProjects, (draft, action) => {
-        
-        draft.projects = action.payload
-        return
-        
-    })
     .addCase(addNameOnClick, (draft, action) => {
         
         draft.nameOnClick = action.payload
@@ -277,5 +292,31 @@ export default createReducer(initialeState, (builder) =>
         draft.messageSend = action.payload
         return
         
+    })
+    .addCase(toggleOpenclassroomsProjectsIsOpen, (draft) => {
+        if(draft.openclassroomsProjetsIsOpen === true){
+            draft.openclassroomsProjetsIsOpen = false
+            return
+        } else{
+            draft.openclassroomsProjetsIsOpen = true
+            return
+        }
+    })
+    .addCase(addOpenclassroomsProjects, (draft, action) => {        
+        draft.openclassroomsProjets = action.payload
+        return        
+    })
+    .addCase(addMyPersonalProjet, (draft, action) => {        
+        draft.myPersonalProjet = action.payload
+        return        
+    })
+    .addCase(toggleMyPersonalProjetIsOpen, (draft) => {
+        if(draft.myPersonalProjetIsOpen === true){
+            draft.myPersonalProjetIsOpen = false
+            return
+        } else{
+            draft.myPersonalProjetIsOpen = true
+            return
+        }
     })
 )
