@@ -45,7 +45,7 @@
     font-size: 2.6em;
     font-weight: 900;
     margin: 20px 0 5px 10px;
-    animation: downName 3000ms cubic-bezier(.76,.09,.66,.55) both;
+    animation: downName 1000ms cubic-bezier(.76,.09,.66,.55) both;
     animation-delay: 2000ms;
     font-family: 'Permanent Marker', cursive;
 }
@@ -57,13 +57,13 @@
     margin-bottom: 15px;
     margin-left: 20px;
     animation: rightWorks 2000ms ease both;
-    animation-delay: 7s;
+    animation-delay: 5s;
 }
 
 .citation{
     margin: 10px;
     width: 50%;
-    animation: opacity 1000ms 12s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+    animation: opacity 1000ms 10s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
 .barre{
@@ -79,7 +79,7 @@
     text-align: left;
     margin-bottom: 50px;
     animation: downName 2000ms ease both;
-    animation-delay: 9s;
+    animation-delay: 7s;
     
 }
 
@@ -110,7 +110,7 @@
 
 .pictos-container{
    animation: appearFromDown 1500ms cubic-bezier(.42,1.6,.71,.33) both;
-    animation-delay: 13s;
+    animation-delay: 10s;
 }
 
 .pictos-container a:nth-child(2){
@@ -163,7 +163,8 @@
         width: 100%;
         height: 100vh;
         align-items: center;
-        justify-content: flex-start;
+        padding-bottom: 30%;
+        /* justify-content: flex-start; */
     }
     .home-first{
         color: #1152B9;
@@ -248,10 +249,12 @@
 /********** Média Queries 480px **********/
 @media screen and (max-width: 480px) {
     .imgContainerBis{ 
-        height: 287px;
+        height: 180px;
+        width: 180px;
+    
     } 
     .imgBis-container{
-        width: 287px;
+        width: inherit;
     }
 }
 
