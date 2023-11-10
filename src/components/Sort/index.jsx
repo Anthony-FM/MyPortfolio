@@ -9,7 +9,7 @@ import { addOpenclassroomsProjects } from '../../feature/myPortefolioFeatures';
 // components
 import Options from '../Options';
 
-export default function Sort({index}){
+export default function Sort({index, TitleSort}){
     const dispatch = useDispatch()
     const projectsArray = useSelector(selectMyslice).datas.Projects[index].studyProjects
     const darkMode = useSelector(selectMyslice).darkMode
@@ -31,7 +31,7 @@ export default function Sort({index}){
     }
 
     return <div className="select-container">
-        <label htmlFor="trie" className={darkMode ? 'color-white' : "color-blue"}> Projets utilisants: </label>
+        <label htmlFor="trie" className={darkMode ? 'color-white' : "color-blue"}> {TitleSort} </label>
         <select name="technique" id="trie" onChange={(e) => sortByWords(e.target.value)}>
             <option value="Tous les projets" defaultValue="React">Tous les projets</option>
             {uniqueKeywords ? uniqueKeywords.map((keyword, index) => {

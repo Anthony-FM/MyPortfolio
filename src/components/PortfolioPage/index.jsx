@@ -96,8 +96,11 @@ export default function PortefolioPage(){
             
             <span className={ocProjectsIsOpen ? "block-down border-color-blue" : "block-right border-color-blue"}></span>
         </h2>
+        <Sort 
+          index={0}
+          TitleSort="Trier les Projets Openclassrooms:"
+        />
         <div className={ocProjectsIsOpen ? "cards-container" : "none"}>
-        <Sort index={0}/>
             {openclassroomsProjects ? openclassroomsProjects.map((projet, index) => {
               return <Cards
               picture={projet.picture}
@@ -124,8 +127,11 @@ export default function PortefolioPage(){
             
             <span className={myPersonalProjectsIsOpen ? "block-down border-color-blue" : "block-right border-color-blue"}></span>
         </h2>
+        <Sort 
+          index={1}
+          TitleSort="Trier mes Projets: "
+        />
         <div className={myPersonalProjectsIsOpen ? "cards-container" : "none"}>
-              <Sort index={1}/>
             {myPersonalProjets.length > 0 ? myPersonalProjets.map((projet, index) => {
             return <Cards
                     picture={projet.picture}
