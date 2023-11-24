@@ -28,7 +28,6 @@ export default function WorkTitle(){
             let upDatedText = isDeleting ? fullText.substring(0, mainTitle.length - 1) : fullText.substring(0, mainTitle.length + 1)
     
             setMainTitle(upDatedText);
-            // let toto;
             
             //
             if (isDeleting) {
@@ -36,30 +35,27 @@ export default function WorkTitle(){
             }
             // Dès que le texte est entier, on fait une pause avant de supprimer
             if(!isDeleting && upDatedText === fullText) {
-                // Pause avant de supprimer le texte              
-
-                setTimeout(() => {
-                    
+                // Pause avant de supprimer le texte 
+                setTimeout(() =>{
                     setIsDeleting(true)
                     setDelta(period)
 
                 }, 1000)
                 // Pendant le suppression du texte, dès que la taille du mot arrive à un,
-                // on change l'état, on change de mot et de periode
+                // on change l'état, on change de mot et de periode    
             } else if(isDeleting && upDatedText.length === 1) {
                 setTimeout(() => {
                     setIsDeleting(false)
                     setLoopNumber(loopNumber + 1)
-                    setDelta(100)
-
-                }, 500)
+                    setDelta(140)
+                }, 1000)
             }
         }
         let ticker = setInterval(() => {
             tick();
         }, delta)
 
-        return () => { clearInterval(ticker)}
+        return () => { clearInterval(ticker) }
     },[delta, isDeleting, loopNumber, mainTitle, period, titlesArray])
 
     return  <p className={darkMode ? "citation color-grey-light" : "citation color-lightBlue"}>{mainTitle}<span className={darkMode ? "barre backgroundColor-white" : "barre backgroundColor-black"}></span></p>
