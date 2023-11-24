@@ -9,7 +9,8 @@ import { addOpenclassroomsProjects } from '../../feature/myPortefolioFeatures';
 // components
 import Options from '../Options';
 
-export default function Sort({index, TitleSort}){
+
+export default function Sort({index, TitleSort, open}){
     const dispatch = useDispatch()
     const projectsArray = useSelector(selectMyslice).datas.Projects[index].studyProjects
     const darkMode = useSelector(selectMyslice).darkMode
@@ -20,6 +21,11 @@ export default function Sort({index, TitleSort}){
     });
     const uniqueKeywords = [...new Set(keyword)]
 
+    /**
+     * 
+     * @param {string} word 
+     * @returns 
+     */
     function sortByWords(word){
         if(word === "Tous les projets"){
             dispatch(addOpenclassroomsProjects(projectsArray))
@@ -30,10 +36,10 @@ export default function Sort({index, TitleSort}){
         return
     }
 
-    return <div className="select-container">
+    return <div className={open? "select-container" : "none"}>
         <label htmlFor="trie" className={darkMode ? 'color-white' : "color-blue"}> {TitleSort} </label>
-        <select name="technique" id="trie" onChange={(e) => sortByWords(e.target.value)}>
-            <option value="Tous les projets" defaultValue="React">Tous les projets</option>
+        <select name="technique" id="trie" onChange={(e) => sortByWords(e.target.value)} >
+            <option value="Tous les projets" >Tous les projets</option>
             {uniqueKeywords ? uniqueKeywords.map((keyword, index) => {
                 return <Options 
                     value={keyword}                    
