@@ -99,6 +99,7 @@ export default function PortefolioPage(){
         <Sort 
           index={0}
           TitleSort="Trier les Projets Openclassrooms:"
+          open={ocProjectsIsOpen}
         />
         <div className={ocProjectsIsOpen ? "cards-container" : "none"}>
             {openclassroomsProjects ? openclassroomsProjects.map((projet, index) => {
@@ -130,6 +131,7 @@ export default function PortefolioPage(){
         <Sort 
           index={1}
           TitleSort="Trier mes Projets: "
+          open={myPersonalProjectsIsOpen}
         />
         <div className={myPersonalProjectsIsOpen ? "cards-container" : "none"}>
             {myPersonalProjets.length > 0 ? myPersonalProjets.map((projet, index) => {
@@ -143,7 +145,7 @@ export default function PortefolioPage(){
                     description={projet.description}
                     key={`${index}-${projet.projectName}`}
                     />
-            }) : <p className={darkMode? "color-white" : "color-black"}>"Patience! Mes nouveaux Projets arrivent bientôt...😏"</p>}
+            }) : <p className={darkMode? "wait color-white" : "wait color-black"}>"Patience! Mes nouveaux Projets arrivent bientôt...😏"</p>}
         </div>
         
     </section>
