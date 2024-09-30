@@ -42,9 +42,37 @@ export default function Navbar(){
             <img src={darkMode ? LogoBlue : LogoBlack} alt="Lettre A logo" className="logo" />
         </Link>
         <ul className={darkMode ? "navbar-ul backgroundColor-white" : "navbar-ul backgroundColor-black"}>
-            <li className="navbar-li" key="about"><Link className={ aboutIsVisible ? (darkMode ? "navbar-link color-black " : "navbar-link color-blue ") : (darkMode ? "navbar-link color-blue" : "navbar-link color-white")} to="#About">A Propos</Link></li>
-            <li className="navbar-li" key="portfolio"><Link className={ portfolioIsVisible ? (darkMode ? "navbar-link color-black" : "navbar-link color-blue"): (darkMode ? "navbar-link color-blue" : "navbar-link color-white")} to="#portfolio">Portfolio</Link></li>
-            <li className="navbar-li" key="contact"><Link className={contactIsVisible ? (darkMode ? "navbar-link color-black" : "navbar-link color-blue") : (darkMode ? "navbar-link color-blue" : "navbar-link color-white")} to="#contact">Contact</Link></li>
+            <li className="navbar-li" key="about">
+                <Link 
+                    className={`navbar-link 
+                        ${aboutIsVisible ? 
+                            (darkMode ? " color-black " : "navbar-link color-blue ") : 
+                            (darkMode ? "color-blue" : "color-white")}`} 
+                    to="#About">A Propos
+                </Link>
+            </li>
+
+            <li className="navbar-li" key="portfolio">
+                <Link 
+                    className={ 
+                        portfolioIsVisible ? 
+                            (darkMode ? "navbar-link color-black" : "navbar-link color-blue"): 
+                            (darkMode ? "navbar-link color-blue" : "navbar-link color-white")
+                        } 
+                    to="#portfolio">Portfolio
+                </Link>            
+            </li>
+
+            <li className="navbar-li" key="contact">
+                <Link 
+                    className={
+                        contactIsVisible ? 
+                            (darkMode ? "navbar-link color-black" : "navbar-link color-blue") : 
+                            (darkMode ? "navbar-link color-blue" : "navbar-link color-white")
+                        } 
+                    to="#contact">Contact
+                </Link>
+            </li>
             
             <DarkModeButton/>
         </ul>

@@ -5,7 +5,7 @@
     height: 60px;
     cursor: pointer;
     transform-origin: bottom;
-    animation: handshake 2000ms ease infinite;
+    /* animation: handshake 2000ms ease infinite; */
 }
 .darkmode-img{
     width: 50%;
