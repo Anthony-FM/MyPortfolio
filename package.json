@@ -1,5 +1,4 @@
 {
-  
   "name": "my_portefolio",
   "version": "0.1.0",
   "private": true,
@@ -19,7 +18,8 @@
     "react-scripts": "5.0.1",
     "redux": "^4.2.1",
     "web-vitals": "^2.1.0",
-    "yarn": "^1.22.19"
+    "yarn": "^1.22.19",
+    "framer-motion": "^11.0.3"
   },
   "scripts": {
     "start": "react-scripts start",

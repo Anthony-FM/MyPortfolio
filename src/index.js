@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './utils/style/index.css';
-import { HashRouter as Router, Route,Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route,Routes } from 'react-router-dom';
 
 // Pages
 import Home from './pages/Home'
