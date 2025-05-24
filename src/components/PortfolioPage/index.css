@@ -16,6 +16,9 @@
     margin-bottom: 10px;    
     padding: 30px;
     cursor: pointer;
+    /* border: 1px solid #1152B9; */
+}
+.portfolio-titleSection:hover {
     border: 1px solid #1152B9;
 }
 

@@ -1,5 +1,6 @@
 //CSS
 import './index.css'
+import {  motion } from 'framer-motion';
 // hook
 import { useSelector, useDispatch} from 'react-redux'
 import { useEffect, useRef } from 'react';
@@ -11,6 +12,8 @@ import Sort from '../Sort';
 // Action
 import { addObserverPortfolio } from '../../feature/myIntersectionObserver';
 import { toggleMyPersonalProjetIsOpen, toggleOpenclassroomsProjectsIsOpen } from '../../feature/myPortefolioFeatures';
+
+
 
 export default function PortefolioPage(){
     // OpenClassRooms
@@ -116,8 +119,12 @@ export default function PortefolioPage(){
             }) : ""}
         </div>       
         
-        <h2 className={portfolioIsVisible ? (darkMode ? "portfolio-titleSection color-white animation-appearFromLeft" : "portfolio-titleSection animation-appearFromLeft") : (darkMode ? "portfolio-titleSection color-white animation-dissappearFromLeft" : "portfolio-titleSection animation-dissappearFromLeft")}
-        onClick={() => dispatch(toggleMyPersonalProjetIsOpen())}
+        <motion.h2 
+          className={portfolioIsVisible ? 
+            (darkMode ? "portfolio-titleSection color-white animation-appearFromLeft" : "portfolio-titleSection animation-appearFromLeft") : 
+            (darkMode ? "portfolio-titleSection color-white animation-dissappearFromLeft" : "portfolio-titleSection animation-dissappearFromLeft")}
+          onClick={() => dispatch(toggleMyPersonalProjetIsOpen())}
+
         >
             <span className={myPersonalProjectsIsOpen ? "block-down border-color-blue" : "block-left border-color-blue"}></span>
             <div className="logoContainer">
@@ -127,7 +134,7 @@ export default function PortefolioPage(){
             {myPersonalProjetDataTitle}
             
             <span className={myPersonalProjectsIsOpen ? "block-down border-color-blue" : "block-right border-color-blue"}></span>
-        </h2>
+        </motion.h2>
         <Sort 
           index={1}
           TitleSort="Trier mes Projets: "

@@ -2,7 +2,7 @@
 import './index.css'
 // IMG
 import Hello from '../../assets/hello.png'
-import CV from '../../assets/cv/cv-developpeur.pdf'
+import CV from '../../assets/cv/CV-anthony_fouda-many.pdf'
 import BoxArrow from '../../assets/cv/box-arrow-up-right.svg'
 import BoxArrowWhite from "../../assets/cv/box-arrow-up-right-white.svg"
 import MyPicture from '../../assets/pictureOfMeBW.jpg'
