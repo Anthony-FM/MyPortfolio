@@ -2,15 +2,18 @@
     "Presentation": {
         "title" : [
             "#OpenToWork ✅",
-            "#FrontEndDev 💻",
-            "#CréateurDeREACTivité ⚡",
-            "#ArtisanDuJavaScript 💛",
-            "#AmoureuxDuWeb 💙"
+            "#FrontEndDev 💻"
         ],
         "name" : "Anthony Fouda-Many.",
-        "presentation" : "Un développeur JavaScript et React tout juste diplômé. Mon portfolio reflète mon parcours, de la formation aux projets concrets. Explorez mes réalisations pour voir comment je transforme la passion en code."
+        "presentation" : "Après une pause de deux ans, je reprends le développement avec rigueur et motivation. Ce portfolio marque un nouveau départ, centré sur l’apprentissage, la pratique et la montée en compétences vers un profil fullstack."
     },
-    "APropos" : ["Bonjour, je m'appel Anthony Fouda-Many, un passionné de développement d'application web JavaScript - React.","Mon parcours, du design graphique au développement, m'a permis d'acquérir une base solide en React.js, Redux, et JavaScript, tout en utilisant des méthodes agiles et des tests Jest pour garantir la qualité de code. ","Mon amour pour le basketball et la science-fiction reflète mon esprit collaborateur, persévérant et explorateur, que je canalise dans ma créativité en développement.","Mon ambition est de marier mes divers expériences avec ma passion pour le développement, en créant des interfaces fonctionnelles et créatives.","Je suis enthousiaste à l'idée de rejoindre une équipe dynamique pour contribuer à des projets inspirants."],
+    "APropos" : ["Bonjour, je m'appelle Anthony Fouda-Many et je suis passionné par le développement d'applications web en JavaScript et React.",
+
+"Issu d’une formation en design graphique, j’ai progressivement orienté mon parcours vers le développement web, où j’ai consolidé mes compétences en React.js, Redux, et JavaScript moderne. Je m’appuie sur des méthodes de travail agiles, l’écriture de tests avec Jest, et une attention particulière à la qualité du code pour construire des interfaces à la fois fiables, créatives et fonctionnelles.",
+
+"Curieux, persévérant et rigoureux, je puise mon énergie dans deux passions qui m'accompagnent au quotidien : le basketball, pour l’esprit d’équipe et le dépassement de soi, et la science-fiction, pour l'imagination et la projection vers l’innovation.",
+
+"Aujourd’hui, je souhaite intégrer le Mastère Développeur Fullstack chez LiveCampus pour approfondir mes compétences back-end et devenir un développeur fullstack autonome. Mon objectif est de rejoindre une équipe dynamique, apprendre au contact de professionnels, et contribuer à des projets concrets et porteurs de sens."],
     
     "Projects": [
         {

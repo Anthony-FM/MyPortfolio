@@ -12,7 +12,7 @@ import Contact from "../../components/ContactPage"
 
 
 export default function Home(){
-    const { datas, isLoading, error} = useFetch("./datas/data.json")
+    const { datas, isLoading, error} = useFetch("./datas/data.json"); // github-page => ../datas/data.json
     
     return <> {
         isLoading ? <Loading/>

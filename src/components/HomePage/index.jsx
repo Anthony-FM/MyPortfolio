@@ -64,7 +64,7 @@ export default function HomePage ({presentation, name}) {
                 </div>
                 <p className='home-first'>Hello <img src={Hello} className='home-img-hand' alt='hand saying hello'/> je m'appelle:</p>
                 <h1 className={ darkMode ? "home-name color-white" : "home-name"}>{name}</h1>
-                <h2 className="home-works"> Développeur d'application <br/>Javascript - React </h2> 
+                <h2 className="home-works"> Développeur JavaScript & React <br/>en reconversion active.</h2> 
                 <WorkTitle />
                 <p className={darkMode ? "home-paragraphe color-white" : "home-paragraphe"}>{presentation} </p>
                 <Button text="Mon CV" link={CV} img={darkMode ? BoxArrowWhite : BoxArrow} imgName="pdf-picto" target="_blank"/>

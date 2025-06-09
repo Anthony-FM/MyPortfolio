@@ -1,6 +1,6 @@
 //CSS
 import './index.css'
-import {  motion } from 'framer-motion';
+// import {  motion } from 'framer-motion';
 // hook
 import { useSelector, useDispatch} from 'react-redux'
 import { useEffect, useRef } from 'react';
@@ -8,10 +8,9 @@ import { useEffect, useRef } from 'react';
 import { selectMyslice, selectObserver } from '../../utils/redux/selector';
 // Components
 import Cards from '../Cards';
-import Sort from '../Sort';
 // Action
 import { addObserverPortfolio } from '../../feature/myIntersectionObserver';
-import { toggleMyPersonalProjetIsOpen, toggleOpenclassroomsProjectsIsOpen } from '../../feature/myPortefolioFeatures';
+import { toggleOpenclassroomsProjectsIsOpen } from '../../feature/myPortefolioFeatures';
 
 
 
@@ -21,14 +20,16 @@ export default function PortefolioPage(){
     const openclassrommsTitle = openclassrooms.title
     const openclassroomsPicture = openclassrooms.picture
     const openclassroomsProjects = useSelector(selectMyslice).openclassroomsProjets // Les projets
-    const ocProjectsIsOpen = useSelector(selectMyslice).openclassroomsProjetsIsOpen
+    const ocProjectsIsOpen = true
+    // const ocProjectsIsOpen = useSelector(selectMyslice).openclassroomsProjetsIsOpen
     
     // MyPersonalProjet
-    const myPersonalProjets = useSelector(selectMyslice).myPersonalProjet
-    const myPersonalProjetData = useSelector(selectMyslice).datas.Projects[1]
-    const myPersonalProjetDataTitle = myPersonalProjetData.title
-    const myPersonalProjetDataPicture = myPersonalProjetData.picture
-    const myPersonalProjectsIsOpen = useSelector(selectMyslice).myPersonalProjetIsOpen
+    // const myPersonalProjets = useSelector(selectMyslice).myPersonalProjet
+    // const myPersonalProjetData = useSelector(selectMyslice).datas.Projects[1];
+    // const myPersonalProjetDataTitle = myPersonalProjetData.title
+    // const myPersonalProjetDataPicture = myPersonalProjetData.picture
+    // const myPersonalProjectsIsOpen = useSelector(selectMyslice).myPersonalProjetIsOpen
+
     const darkMode = useSelector(selectMyslice).darkMode    
     
 
@@ -99,11 +100,7 @@ export default function PortefolioPage(){
             
             <span className={ocProjectsIsOpen ? "block-down border-color-blue" : "block-right border-color-blue"}></span>
         </h2>
-        <Sort 
-          index={0}
-          TitleSort="Trier les Projets Openclassrooms:"
-          open={ocProjectsIsOpen}
-        />
+        
         <div className={ocProjectsIsOpen ? "cards-container" : "none"}>
             {openclassroomsProjects ? openclassroomsProjects.map((projet, index) => {
               return <Cards
@@ -119,7 +116,7 @@ export default function PortefolioPage(){
             }) : ""}
         </div>       
         
-        <motion.h2 
+        {/* <motion.h2 
           className={portfolioIsVisible ? 
             (darkMode ? "portfolio-titleSection color-white animation-appearFromLeft" : "portfolio-titleSection animation-appearFromLeft") : 
             (darkMode ? "portfolio-titleSection color-white animation-dissappearFromLeft" : "portfolio-titleSection animation-dissappearFromLeft")}
@@ -134,13 +131,9 @@ export default function PortefolioPage(){
             {myPersonalProjetDataTitle}
             
             <span className={myPersonalProjectsIsOpen ? "block-down border-color-blue" : "block-right border-color-blue"}></span>
-        </motion.h2>
-        <Sort 
-          index={1}
-          TitleSort="Trier mes Projets: "
-          open={myPersonalProjectsIsOpen}
-        />
-        <div className={myPersonalProjectsIsOpen ? "cards-container" : "none"}>
+        </motion.h2> */}
+        
+        {/* <div className={myPersonalProjectsIsOpen ? "cards-container" : "none"}>
             {myPersonalProjets.length > 0 ? myPersonalProjets.map((projet, index) => {
             return <Cards
                     picture={projet.picture}
@@ -153,7 +146,7 @@ export default function PortefolioPage(){
                     key={`${index}-${projet.projectName}`}
                     />
             }) : <p className={darkMode? "wait color-white" : "wait color-black"}>"Patience! Mes nouveaux Projets arrivent bientôt...😏"</p>}
-        </div>
+        </div> */}
         
     </section>
         
